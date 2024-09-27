@@ -7,12 +7,8 @@ namespace Contrib.Avro.CodeGen.Tests;
 [Strongly]
 public partial struct UserId;
 
-public sealed class UserIdLogicalType: LogicalType
+public sealed class UserIdLogicalType() : LogicalType("user-id")
 {
-    public UserIdLogicalType() : base("user-id")
-    {
-
-    }
     public override object? ConvertToBaseValue(object logicalValue, LogicalSchema schema)
     {
         return logicalValue.ToString();

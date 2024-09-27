@@ -3,13 +3,8 @@ using Avro.Util;
 
 namespace Contrib.Avro.CodeGen.Tests.LogicalTypes;
 
-public sealed class Duration : LogicalType
+public sealed class Duration() : LogicalType("duration")
 {
-    public Duration() : base("duration")
-    {
-
-    }
-
     public override void ValidateSchema(LogicalSchema schema)
     {
         if (Schema.Type.Int != schema.BaseSchema.Tag)
