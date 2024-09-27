@@ -206,8 +206,10 @@ public enum {name}
 
                 switch (logicalSchema.LogicalType)
                 {
-                    case IdentityLogicalType { DotnetTypeHint: var dotnetType }:
+                    case RegisteredLogicalType { DotnetTypeHint: var dotnetType }:
                         return new AvroFieldType(dotnetType, Schema: schema, nullable);
+                    case UnknownLogicalType _:
+                        return GetAvroType(logicalSchema.BaseSchema, nullable);
                     default:
                         var csharpType = logicalSchema.LogicalType.GetCSharpType(nullable);
                         return csharpType.IsGenericType && csharpType.GetGenericTypeDefinition() == typeof(Nullable<>)

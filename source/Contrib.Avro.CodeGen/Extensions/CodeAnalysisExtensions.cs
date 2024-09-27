@@ -21,7 +21,9 @@ public static class CodeAnalysisExtensions
         return defaultOpts;
     }
 
-    public static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
+    public static bool GetMsBuildBoolean(this AnalyzerConfigOptions opts, string name, bool defaultValue = false) => bool.TryParse(opts.GetMsBuildProperty(name), out var value) ? value : defaultValue;
+
+    private static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
     {
         if ((opts.TryGetValue($"build_metadata.AdditionalFiles.{name}", out var v) && !string.IsNullOrWhiteSpace(v))
             || opts.TryGetValue($"build_property.Avro_{name}", out v) && !string.IsNullOrWhiteSpace(v))

@@ -48,12 +48,13 @@
 
     <PropertyGroup>
         <Avro_LogicalTypes></Avro_LogicalTypes>
+        <Avro_FailUnknownLogicalTypes>true</Avro_FailUnknownLogicalTypes>
     </PropertyGroup>
 
     <ItemGroup>
         <AdditionalFiles Include="$(PkgTest_avro_contract)\schemas\**\*.avsc"
                          NamespaceMapping="Contrib.Avro.CodeGen.Tests.Messages:Contrib.Avro.CodeGen.TestMessages"
-                         LogicalTypes="duration:System.TimeSpan,user-id:Contrib.Avro.CodeGen.Tests.UserId"/>
+                         LogicalTypes="duration:System.TimeSpan,user-id:Contrib.Avro.CodeGen.Tests.UserId" />
     </ItemGroup>
 
 </Project>
