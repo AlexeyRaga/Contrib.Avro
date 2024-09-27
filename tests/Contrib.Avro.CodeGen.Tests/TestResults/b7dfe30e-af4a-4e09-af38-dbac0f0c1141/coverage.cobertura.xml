@@ -1,0 +1,3504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.011699999999999999" branch-rate="0.0026" version="1.9" timestamp="1727347648" lines-covered="9" lines-valid="765" branches-covered="1" branches-valid="371">
+  <sources>
+    <source>/Users/alexey/src/tests/Contrib.Avro.Codegen/</source>
+  </sources>
+  <packages>
+    <package name="Contrib.Avro.Codegen" line-rate="0" branch-rate="0" complexity="271">
+      <classes>
+        <class name="Contrib.Avro.Codegen.AvroFieldType" filename="source/Contrib.Avro.CodeGen/AvroFieldType.cs" line-rate="0" branch-rate="0" complexity="8">
+          <methods>
+            <method name="get_Type" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Schema" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Nullable" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Unwrapper" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Wrapper" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_FullType" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="12" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,Avro.Schema,System.Boolean,System.String,System.Func`2&lt;System.String,System.String&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="12" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="6" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.AvroGenOptions" filename="source/Contrib.Avro.CodeGen/AvroGenOptions.cs" line-rate="0" branch-rate="0" complexity="12">
+          <methods>
+            <method name="get_NamespaceMapping" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LogicalTypes" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_GenerateRequiredFields" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Create" signature="(Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptions)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+                <line number="12" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="13" type="jump" coverage="0%" />
+                    <condition number="25" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="0" branch="False" />
+                <line number="16" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="70" type="jump" coverage="0%" />
+                    <condition number="82" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;,System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;,System.Boolean)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="False" />
+            <line number="7" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="13" type="jump" coverage="0%" />
+                <condition number="25" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="14" hits="0" branch="False" />
+            <line number="16" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="70" type="jump" coverage="0%" />
+                <condition number="82" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.AvroSourceGen" filename="source/Contrib.Avro.CodeGen/AvroSourceGen.cs" line-rate="0" branch-rate="0" complexity="75">
+          <methods>
+            <method name="Initialize" signature="(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="18" type="jump" coverage="0%" />
+                    <condition number="38" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GenerateSchemaCode" signature="(Microsoft.CodeAnalysis.SourceProductionContext,Contrib.Avro.Codegen.SchemaResult)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="True" condition-coverage="0% (0/8)">
+                  <conditions>
+                    <condition number="15" type="jump" coverage="0%" />
+                    <condition number="46" type="jump" coverage="0%" />
+                    <condition number="59" type="jump" coverage="0%" />
+                    <condition number="80" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GenerateRecordCode" signature="(Microsoft.CodeAnalysis.SourceProductionContext,Contrib.Avro.Codegen.GeneratorItem`1&lt;Avro.RecordSchema&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="51" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+                <line number="53" hits="0" branch="False" />
+                <line number="55" hits="0" branch="False" />
+                <line number="56" hits="0" branch="False" />
+                <line number="57" hits="0" branch="False" />
+                <line number="59" hits="0" branch="False" />
+                <line number="60" hits="0" branch="False" />
+                <line number="61" hits="0" branch="False" />
+                <line number="62" hits="0" branch="False" />
+                <line number="63" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
+                <line number="65" hits="0" branch="False" />
+                <line number="66" hits="0" branch="False" />
+                <line number="67" hits="0" branch="False" />
+                <line number="68" hits="0" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="71" hits="0" branch="False" />
+                <line number="72" hits="0" branch="False" />
+                <line number="73" hits="0" branch="False" />
+                <line number="74" hits="0" branch="False" />
+                <line number="75" hits="0" branch="False" />
+                <line number="76" hits="0" branch="False" />
+                <line number="77" hits="0" branch="False" />
+                <line number="78" hits="0" branch="False" />
+                <line number="79" hits="0" branch="False" />
+                <line number="80" hits="0" branch="False" />
+                <line number="81" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GenerateFixedCode" signature="(Microsoft.CodeAnalysis.SourceProductionContext,Avro.FixedSchema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="84" hits="0" branch="False" />
+                <line number="85" hits="0" branch="False" />
+                <line number="87" hits="0" branch="False" />
+                <line number="88" hits="0" branch="False" />
+                <line number="89" hits="0" branch="False" />
+                <line number="90" hits="0" branch="False" />
+                <line number="91" hits="0" branch="False" />
+                <line number="92" hits="0" branch="False" />
+                <line number="93" hits="0" branch="False" />
+                <line number="94" hits="0" branch="False" />
+                <line number="95" hits="0" branch="False" />
+                <line number="96" hits="0" branch="False" />
+                <line number="97" hits="0" branch="False" />
+                <line number="98" hits="0" branch="False" />
+                <line number="99" hits="0" branch="False" />
+                <line number="100" hits="0" branch="False" />
+                <line number="101" hits="0" branch="False" />
+                <line number="102" hits="0" branch="False" />
+                <line number="103" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GenerateEnumCode" signature="(Microsoft.CodeAnalysis.SourceProductionContext,Avro.EnumSchema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="106" hits="0" branch="False" />
+                <line number="107" hits="0" branch="False" />
+                <line number="109" hits="0" branch="False" />
+                <line number="111" hits="0" branch="False" />
+                <line number="112" hits="0" branch="False" />
+                <line number="113" hits="0" branch="False" />
+                <line number="114" hits="0" branch="False" />
+                <line number="115" hits="0" branch="False" />
+                <line number="116" hits="0" branch="False" />
+                <line number="117" hits="0" branch="False" />
+                <line number="118" hits="0" branch="False" />
+                <line number="119" hits="0" branch="False" />
+                <line number="120" hits="0" branch="False" />
+                <line number="121" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GetAvroType" signature="(Avro.Schema,System.Boolean)" line-rate="0" branch-rate="0" complexity="33">
+              <lines>
+                <line number="124" hits="0" branch="True" condition-coverage="0% (0/17)">
+                  <conditions>
+                    <condition number="21" type="switch" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="128" hits="0" branch="False" />
+                <line number="131" hits="0" branch="False" />
+                <line number="134" hits="0" branch="False" />
+                <line number="137" hits="0" branch="False" />
+                <line number="140" hits="0" branch="False" />
+                <line number="143" hits="0" branch="False" />
+                <line number="146" hits="0" branch="False" />
+                <line number="149" hits="0" branch="False" />
+                <line number="152" hits="0" branch="False" />
+                <line number="153" hits="0" branch="False" />
+                <line number="158" hits="0" branch="False" />
+                <line number="159" hits="0" branch="False" />
+                <line number="162" hits="0" branch="False" />
+                <line number="164" hits="0" branch="False" />
+                <line number="165" hits="0" branch="False" />
+                <line number="166" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="470" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="167" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="517" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="168" hits="0" branch="False" />
+                <line number="169" hits="0" branch="False" />
+                <line number="170" hits="0" branch="False" />
+                <line number="172" hits="0" branch="False" />
+                <line number="173" hits="0" branch="False" />
+                <line number="174" hits="0" branch="False" />
+                <line number="175" hits="0" branch="False" />
+                <line number="176" hits="0" branch="False" />
+                <line number="177" hits="0" branch="False" />
+                <line number="180" hits="0" branch="False" />
+                <line number="181" hits="0" branch="False" />
+                <line number="182" hits="0" branch="False" />
+                <line number="185" hits="0" branch="False" />
+                <line number="187" hits="0" branch="False" />
+                <line number="188" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="652" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="190" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="690" type="jump" coverage="0%" />
+                    <condition number="709" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="191" hits="0" branch="False" />
+                <line number="192" hits="0" branch="False" />
+                <line number="195" hits="0" branch="False" />
+                <line number="196" hits="0" branch="False" />
+                <line number="198" hits="0" branch="False" />
+                <line number="199" hits="0" branch="False" />
+                <line number="200" hits="0" branch="False" />
+                <line number="201" hits="0" branch="False" />
+                <line number="202" hits="0" branch="False" />
+                <line number="205" hits="0" branch="False" />
+                <line number="207" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="876" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="210" hits="0" branch="False" />
+                <line number="212" hits="0" branch="False" />
+                <line number="213" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="931" type="jump" coverage="0%" />
+                    <condition number="955" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="214" hits="0" branch="False" />
+                <line number="215" hits="0" branch="False" />
+                <line number="216" hits="0" branch="False" />
+                <line number="221" hits="0" branch="False" />
+                <line number="222" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="BuildRecordField" signature="(Contrib.Avro.Codegen.AvroSourceGen/AvroField,Contrib.Avro.Codegen.AvroGenOptions)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="226" hits="0" branch="False" />
+                <line number="227" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="56" type="jump" coverage="0%" />
+                    <condition number="64" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="228" hits="0" branch="False" />
+                <line number="229" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="BuildRecordGet" signature="(System.Collections.Generic.List`1&lt;Contrib.Avro.Codegen.AvroSourceGen/AvroField&gt;)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="232" hits="0" branch="False" />
+                <line number="233" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="6" type="jump" coverage="0%" />
+                    <condition number="14" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="234" hits="0" branch="False" />
+                <line number="235" hits="0" branch="False" />
+                <line number="236" hits="0" branch="False" />
+                <line number="237" hits="0" branch="False" />
+                <line number="239" hits="0" branch="False" />
+                <line number="240" hits="0" branch="False" />
+                <line number="241" hits="0" branch="False" />
+                <line number="242" hits="0" branch="False" />
+                <line number="243" hits="0" branch="False" />
+                <line number="244" hits="0" branch="False" />
+                <line number="245" hits="0" branch="False" />
+                <line number="246" hits="0" branch="False" />
+                <line number="247" hits="0" branch="False" />
+                <line number="248" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="BuildRecordPut" signature="(System.Collections.Generic.List`1&lt;Contrib.Avro.Codegen.AvroSourceGen/AvroField&gt;)" line-rate="0" branch-rate="0" complexity="16">
+              <lines>
+                <line number="251" hits="0" branch="False" />
+                <line number="252" hits="0" branch="False" />
+                <line number="253" hits="0" branch="False" />
+                <line number="254" hits="0" branch="False" />
+                <line number="255" hits="0" branch="False" />
+                <line number="256" hits="0" branch="False" />
+                <line number="257" hits="0" branch="False" />
+                <line number="258" hits="0" branch="False" />
+                <line number="259" hits="0" branch="False" />
+                <line number="260" hits="0" branch="False" />
+                <line number="261" hits="0" branch="False" />
+                <line number="262" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="23" type="jump" coverage="0%" />
+                    <condition number="30" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="263" hits="0" branch="False" />
+                <line number="264" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="48" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="265" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="66" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="266" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="85" type="jump" coverage="0%" />
+                    <condition number="102" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="267" hits="0" branch="False" />
+                <line number="268" hits="0" branch="False" />
+                <line number="269" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="262" type="jump" coverage="0%" />
+                    <condition number="279" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="270" hits="0" branch="False" />
+                <line number="271" hits="0" branch="False" />
+                <line number="272" hits="0" branch="False" />
+                <line number="273" hits="0" branch="False" />
+                <line number="274" hits="0" branch="False" />
+                <line number="275" hits="0" branch="False" />
+                <line number="276" hits="0" branch="False" />
+                <line number="277" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="BuildFileHeader" signature="(Avro.NamedSchema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="280" hits="0" branch="False" />
+                <line number="281" hits="0" branch="False" />
+                <line number="282" hits="0" branch="False" />
+                <line number="283" hits="0" branch="False" />
+                <line number="284" hits="0" branch="False" />
+                <line number="285" hits="0" branch="False" />
+                <line number="286" hits="0" branch="False" />
+                <line number="287" hits="0" branch="False" />
+                <line number="288" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="BuildTypeDocumentation" signature="(Avro.NamedSchema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="291" hits="0" branch="False" />
+                <line number="292" hits="0" branch="False" />
+                <line number="293" hits="0" branch="False" />
+                <line number="294" hits="0" branch="False" />
+                <line number="295" hits="0" branch="False" />
+                <line number="296" hits="0" branch="False" />
+                <line number="297" hits="0" branch="False" />
+                <line number="298" hits="0" branch="False" />
+                <line number="299" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="BuildFieldDocumentation" signature="(Avro.Field)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="302" hits="0" branch="False" />
+                <line number="303" hits="0" branch="False" />
+                <line number="304" hits="0" branch="False" />
+                <line number="305" hits="0" branch="False" />
+                <line number="306" hits="0" branch="False" />
+                <line number="307" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="18" type="jump" coverage="0%" />
+                <condition number="38" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="True" condition-coverage="0% (0/8)">
+              <conditions>
+                <condition number="15" type="jump" coverage="0%" />
+                <condition number="46" type="jump" coverage="0%" />
+                <condition number="59" type="jump" coverage="0%" />
+                <condition number="80" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="51" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+            <line number="53" hits="0" branch="False" />
+            <line number="55" hits="0" branch="False" />
+            <line number="56" hits="0" branch="False" />
+            <line number="57" hits="0" branch="False" />
+            <line number="59" hits="0" branch="False" />
+            <line number="60" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
+            <line number="62" hits="0" branch="False" />
+            <line number="63" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
+            <line number="65" hits="0" branch="False" />
+            <line number="66" hits="0" branch="False" />
+            <line number="67" hits="0" branch="False" />
+            <line number="68" hits="0" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="71" hits="0" branch="False" />
+            <line number="72" hits="0" branch="False" />
+            <line number="73" hits="0" branch="False" />
+            <line number="74" hits="0" branch="False" />
+            <line number="75" hits="0" branch="False" />
+            <line number="76" hits="0" branch="False" />
+            <line number="77" hits="0" branch="False" />
+            <line number="78" hits="0" branch="False" />
+            <line number="79" hits="0" branch="False" />
+            <line number="80" hits="0" branch="False" />
+            <line number="81" hits="0" branch="False" />
+            <line number="84" hits="0" branch="False" />
+            <line number="85" hits="0" branch="False" />
+            <line number="87" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+            <line number="89" hits="0" branch="False" />
+            <line number="90" hits="0" branch="False" />
+            <line number="91" hits="0" branch="False" />
+            <line number="92" hits="0" branch="False" />
+            <line number="93" hits="0" branch="False" />
+            <line number="94" hits="0" branch="False" />
+            <line number="95" hits="0" branch="False" />
+            <line number="96" hits="0" branch="False" />
+            <line number="97" hits="0" branch="False" />
+            <line number="98" hits="0" branch="False" />
+            <line number="99" hits="0" branch="False" />
+            <line number="100" hits="0" branch="False" />
+            <line number="101" hits="0" branch="False" />
+            <line number="102" hits="0" branch="False" />
+            <line number="103" hits="0" branch="False" />
+            <line number="106" hits="0" branch="False" />
+            <line number="107" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
+            <line number="111" hits="0" branch="False" />
+            <line number="112" hits="0" branch="False" />
+            <line number="113" hits="0" branch="False" />
+            <line number="114" hits="0" branch="False" />
+            <line number="115" hits="0" branch="False" />
+            <line number="116" hits="0" branch="False" />
+            <line number="117" hits="0" branch="False" />
+            <line number="118" hits="0" branch="False" />
+            <line number="119" hits="0" branch="False" />
+            <line number="120" hits="0" branch="False" />
+            <line number="121" hits="0" branch="False" />
+            <line number="124" hits="0" branch="True" condition-coverage="0% (0/17)">
+              <conditions>
+                <condition number="21" type="switch" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="128" hits="0" branch="False" />
+            <line number="131" hits="0" branch="False" />
+            <line number="134" hits="0" branch="False" />
+            <line number="137" hits="0" branch="False" />
+            <line number="140" hits="0" branch="False" />
+            <line number="143" hits="0" branch="False" />
+            <line number="146" hits="0" branch="False" />
+            <line number="149" hits="0" branch="False" />
+            <line number="152" hits="0" branch="False" />
+            <line number="153" hits="0" branch="False" />
+            <line number="158" hits="0" branch="False" />
+            <line number="159" hits="0" branch="False" />
+            <line number="162" hits="0" branch="False" />
+            <line number="164" hits="0" branch="False" />
+            <line number="165" hits="0" branch="False" />
+            <line number="166" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="470" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="167" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="517" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="168" hits="0" branch="False" />
+            <line number="169" hits="0" branch="False" />
+            <line number="170" hits="0" branch="False" />
+            <line number="172" hits="0" branch="False" />
+            <line number="173" hits="0" branch="False" />
+            <line number="174" hits="0" branch="False" />
+            <line number="175" hits="0" branch="False" />
+            <line number="176" hits="0" branch="False" />
+            <line number="177" hits="0" branch="False" />
+            <line number="180" hits="0" branch="False" />
+            <line number="181" hits="0" branch="False" />
+            <line number="182" hits="0" branch="False" />
+            <line number="185" hits="0" branch="False" />
+            <line number="187" hits="0" branch="False" />
+            <line number="188" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="652" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="190" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="690" type="jump" coverage="0%" />
+                <condition number="709" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="191" hits="0" branch="False" />
+            <line number="192" hits="0" branch="False" />
+            <line number="195" hits="0" branch="False" />
+            <line number="196" hits="0" branch="False" />
+            <line number="198" hits="0" branch="False" />
+            <line number="199" hits="0" branch="False" />
+            <line number="200" hits="0" branch="False" />
+            <line number="201" hits="0" branch="False" />
+            <line number="202" hits="0" branch="False" />
+            <line number="205" hits="0" branch="False" />
+            <line number="207" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="876" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="210" hits="0" branch="False" />
+            <line number="212" hits="0" branch="False" />
+            <line number="213" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="931" type="jump" coverage="0%" />
+                <condition number="955" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="214" hits="0" branch="False" />
+            <line number="215" hits="0" branch="False" />
+            <line number="216" hits="0" branch="False" />
+            <line number="221" hits="0" branch="False" />
+            <line number="222" hits="0" branch="False" />
+            <line number="226" hits="0" branch="False" />
+            <line number="227" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="56" type="jump" coverage="0%" />
+                <condition number="64" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="228" hits="0" branch="False" />
+            <line number="229" hits="0" branch="False" />
+            <line number="232" hits="0" branch="False" />
+            <line number="233" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="6" type="jump" coverage="0%" />
+                <condition number="14" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="234" hits="0" branch="False" />
+            <line number="235" hits="0" branch="False" />
+            <line number="236" hits="0" branch="False" />
+            <line number="237" hits="0" branch="False" />
+            <line number="239" hits="0" branch="False" />
+            <line number="240" hits="0" branch="False" />
+            <line number="241" hits="0" branch="False" />
+            <line number="242" hits="0" branch="False" />
+            <line number="243" hits="0" branch="False" />
+            <line number="244" hits="0" branch="False" />
+            <line number="245" hits="0" branch="False" />
+            <line number="246" hits="0" branch="False" />
+            <line number="247" hits="0" branch="False" />
+            <line number="248" hits="0" branch="False" />
+            <line number="251" hits="0" branch="False" />
+            <line number="252" hits="0" branch="False" />
+            <line number="253" hits="0" branch="False" />
+            <line number="254" hits="0" branch="False" />
+            <line number="255" hits="0" branch="False" />
+            <line number="256" hits="0" branch="False" />
+            <line number="257" hits="0" branch="False" />
+            <line number="258" hits="0" branch="False" />
+            <line number="259" hits="0" branch="False" />
+            <line number="260" hits="0" branch="False" />
+            <line number="261" hits="0" branch="False" />
+            <line number="262" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="23" type="jump" coverage="0%" />
+                <condition number="30" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="263" hits="0" branch="False" />
+            <line number="264" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="48" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="265" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="66" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="266" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="85" type="jump" coverage="0%" />
+                <condition number="102" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="267" hits="0" branch="False" />
+            <line number="268" hits="0" branch="False" />
+            <line number="269" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="262" type="jump" coverage="0%" />
+                <condition number="279" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="270" hits="0" branch="False" />
+            <line number="271" hits="0" branch="False" />
+            <line number="272" hits="0" branch="False" />
+            <line number="273" hits="0" branch="False" />
+            <line number="274" hits="0" branch="False" />
+            <line number="275" hits="0" branch="False" />
+            <line number="276" hits="0" branch="False" />
+            <line number="277" hits="0" branch="False" />
+            <line number="280" hits="0" branch="False" />
+            <line number="281" hits="0" branch="False" />
+            <line number="282" hits="0" branch="False" />
+            <line number="283" hits="0" branch="False" />
+            <line number="284" hits="0" branch="False" />
+            <line number="285" hits="0" branch="False" />
+            <line number="286" hits="0" branch="False" />
+            <line number="287" hits="0" branch="False" />
+            <line number="288" hits="0" branch="False" />
+            <line number="291" hits="0" branch="False" />
+            <line number="292" hits="0" branch="False" />
+            <line number="293" hits="0" branch="False" />
+            <line number="294" hits="0" branch="False" />
+            <line number="295" hits="0" branch="False" />
+            <line number="296" hits="0" branch="False" />
+            <line number="297" hits="0" branch="False" />
+            <line number="298" hits="0" branch="False" />
+            <line number="299" hits="0" branch="False" />
+            <line number="302" hits="0" branch="False" />
+            <line number="303" hits="0" branch="False" />
+            <line number="304" hits="0" branch="False" />
+            <line number="305" hits="0" branch="False" />
+            <line number="306" hits="0" branch="False" />
+            <line number="307" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.AvroSourceGen/AvroField" filename="source/Contrib.Avro.CodeGen/AvroSourceGen.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Field" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.Diagnostics" filename="source/Contrib.Avro.CodeGen/Diagnostics.cs" line-rate="0" branch-rate="0" complexity="5">
+          <methods>
+            <method name="Info" signature="(Microsoft.CodeAnalysis.SourceProductionContext,System.String,Microsoft.CodeAnalysis.Location)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="26" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="9" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="Error" signature="(Microsoft.CodeAnalysis.SourceProductionContext,System.String,Microsoft.CodeAnalysis.Location)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="29" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="9" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+                <line number="8" hits="0" branch="False" />
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="26" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="9" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="29" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="9" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="7" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.CodeAnalysisExtensions" filename="source/Contrib.Avro.CodeGen/Extensions/CodeAnalysisExtensions.cs" line-rate="0" branch-rate="0" complexity="19">
+          <methods>
+            <method name="GetMsBuildProperty" signature="(Microsoft.CodeAnalysis.GeneratorExecutionContext,System.String,System.String)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="34" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GetMsBuildProperty" signature="(Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider,Microsoft.CodeAnalysis.AdditionalText,System.String)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="True" condition-coverage="0% (0/8)">
+                  <conditions>
+                    <condition number="28" type="jump" coverage="0%" />
+                    <condition number="36" type="jump" coverage="0%" />
+                    <condition number="57" type="jump" coverage="0%" />
+                    <condition number="76" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GetMsBuildProperty" signature="(Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptions,System.String)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="True" condition-coverage="0% (0/8)">
+                  <conditions>
+                    <condition number="20" type="jump" coverage="0%" />
+                    <condition number="28" type="jump" coverage="0%" />
+                    <condition number="49" type="jump" coverage="0%" />
+                    <condition number="68" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="AsDictionary" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="False" />
+                <line number="51" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="34" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="16" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="True" condition-coverage="0% (0/8)">
+              <conditions>
+                <condition number="28" type="jump" coverage="0%" />
+                <condition number="36" type="jump" coverage="0%" />
+                <condition number="57" type="jump" coverage="0%" />
+                <condition number="76" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="True" condition-coverage="0% (0/8)">
+              <conditions>
+                <condition number="20" type="jump" coverage="0%" />
+                <condition number="28" type="jump" coverage="0%" />
+                <condition number="49" type="jump" coverage="0%" />
+                <condition number="68" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+            <line number="51" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.JsonExtensions" filename="source/Contrib.Avro.CodeGen/Extensions/JsonExtensions.cs" line-rate="0" branch-rate="0" complexity="14">
+          <methods>
+            <method name="TraverseJson" signature="(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IEnumerable`1&lt;System.Object&gt;)" line-rate="0" branch-rate="0" complexity="12">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="19" type="jump" coverage="0%" />
+                    <condition number="43" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="58" type="jump" coverage="0%" />
+                    <condition number="67" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="17" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="93" type="jump" coverage="0%" />
+                    <condition number="104" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ForEach" signature="(Newtonsoft.Json.Linq.JArray,System.Action`1&lt;Newtonsoft.Json.Linq.JToken&gt;)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="32" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="25" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="19" type="jump" coverage="0%" />
+                <condition number="43" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="58" type="jump" coverage="0%" />
+                <condition number="67" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="17" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="93" type="jump" coverage="0%" />
+                <condition number="104" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="32" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="25" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.OptionalExtensions" filename="source/Contrib.Avro.CodeGen/Extensions/OptionalExtensions.cs" line-rate="0" branch-rate="0" complexity="14">
+          <methods>
+            <method name="Select" signature="(Microsoft.CodeAnalysis.Optional`1&lt;T&gt;,System.Func`2&lt;T,TResult&gt;)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="10" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="Where" signature="(Microsoft.CodeAnalysis.Optional`1&lt;T&gt;,System.Func`2&lt;T,System.Boolean&gt;)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="14" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="0%" />
+                    <condition number="22" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="DefaultIfEmpty" signature="(Microsoft.CodeAnalysis.Optional`1&lt;T&gt;,T)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="18" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="DefaultIfEmpty" signature="(Microsoft.CodeAnalysis.Optional`1&lt;T&gt;,System.Func`1&lt;T&gt;)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="22" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="SelectMany" signature="(Microsoft.CodeAnalysis.Optional`1&lt;T1&gt;,System.Func`2&lt;T1,Microsoft.CodeAnalysis.Optional`1&lt;T2&gt;&gt;,System.Func`3&lt;T1,T2,TResult&gt;)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="29" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="7" type="jump" coverage="0%" />
+                    <condition number="30" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="14" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="7" type="jump" coverage="0%" />
+                <condition number="22" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="18" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="22" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="7" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="29" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="7" type="jump" coverage="0%" />
+                <condition number="30" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.IdentityLogicalType" filename="source/Contrib.Avro.CodeGen/IdentityLogicalType.cs" line-rate="0" branch-rate="1" complexity="6">
+          <methods>
+            <method name="get_DotnetTypeHint" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ConvertToBaseValue" signature="(System.Object,Avro.LogicalSchema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ConvertToLogicalValue" signature="(System.Object,Avro.LogicalSchema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GetCSharpType" signature="(System.Boolean)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="IsInstanceOfLogicalType" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.String)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.ActionDisposable" filename="source/Contrib.Avro.CodeGen/IndentedStringBuilder.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Dispose" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Action)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.IndentedStringBuilder" filename="source/Contrib.Avro.CodeGen/IndentedStringBuilder.cs" line-rate="0" branch-rate="0" complexity="30">
+          <methods>
+            <method name="New" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="AppendLine" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Append" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="AppendLine" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="AppendMany" signature="(System.Collections.Generic.IEnumerable`1&lt;T&gt;,System.Func`2&lt;T,System.String&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="50" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="AppendValue" signature="(System.String)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="53" hits="0" branch="False" />
+                <line number="54" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="9" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="55" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="31" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="57" hits="0" branch="False" />
+                <line number="58" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="168" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="59" hits="0" branch="False" />
+                <line number="60" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="85" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="61" hits="0" branch="False" />
+                <line number="62" hits="0" branch="False" />
+                <line number="63" hits="0" branch="False" />
+                <line number="65" hits="0" branch="False" />
+                <line number="66" hits="0" branch="False" />
+                <line number="67" hits="0" branch="False" />
+                <line number="68" hits="0" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="71" hits="0" branch="False" />
+                <line number="73" hits="0" branch="False" />
+                <line number="74" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="IndentBlock" signature="(System.String,System.String)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="77" hits="0" branch="False" />
+                <line number="78" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="27" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="79" hits="0" branch="False" />
+                <line number="80" hits="0" branch="False" />
+                <line number="81" hits="0" branch="False" />
+                <line number="82" hits="0" branch="False" />
+                <line number="83" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="24" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="84" hits="0" branch="False" />
+                <line number="85" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="StartBlock" signature="(System.String,System.String)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="88" hits="0" branch="False" />
+                <line number="89" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="27" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="90" hits="0" branch="False" />
+                <line number="91" hits="0" branch="False" />
+                <line number="92" hits="0" branch="False" />
+                <line number="93" hits="0" branch="False" />
+                <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="24" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="95" hits="0" branch="False" />
+                <line number="96" hits="0" branch="False" />
+                <line number="97" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="EndBlock" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="100" hits="0" branch="False" />
+                <line number="101" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="17" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="102" hits="0" branch="False" />
+                <line number="103" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="EndAllBlocks" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="106" hits="0" branch="False" />
+                <line number="107" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="36" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="108" hits="0" branch="False" />
+                <line number="109" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="IncreaseIndentation" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="112" hits="0" branch="False" />
+                <line number="113" hits="0" branch="False" />
+                <line number="114" hits="0" branch="False" />
+                <line number="115" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="DecreaseIndentation" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="118" hits="0" branch="False" />
+                <line number="119" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="12" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="120" hits="0" branch="False" />
+                <line number="121" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ToString" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="124" hits="0" branch="False" />
+                <line number="125" hits="0" branch="False" />
+                <line number="126" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="26" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+            <line number="53" hits="0" branch="False" />
+            <line number="54" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="9" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="55" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="31" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="57" hits="0" branch="False" />
+            <line number="58" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="168" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="59" hits="0" branch="False" />
+            <line number="60" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="85" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="61" hits="0" branch="False" />
+            <line number="62" hits="0" branch="False" />
+            <line number="63" hits="0" branch="False" />
+            <line number="65" hits="0" branch="False" />
+            <line number="66" hits="0" branch="False" />
+            <line number="67" hits="0" branch="False" />
+            <line number="68" hits="0" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="71" hits="0" branch="False" />
+            <line number="73" hits="0" branch="False" />
+            <line number="74" hits="0" branch="False" />
+            <line number="77" hits="0" branch="False" />
+            <line number="78" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="27" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="79" hits="0" branch="False" />
+            <line number="80" hits="0" branch="False" />
+            <line number="81" hits="0" branch="False" />
+            <line number="82" hits="0" branch="False" />
+            <line number="83" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="24" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="84" hits="0" branch="False" />
+            <line number="85" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+            <line number="89" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="27" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="90" hits="0" branch="False" />
+            <line number="91" hits="0" branch="False" />
+            <line number="92" hits="0" branch="False" />
+            <line number="93" hits="0" branch="False" />
+            <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="24" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="95" hits="0" branch="False" />
+            <line number="96" hits="0" branch="False" />
+            <line number="97" hits="0" branch="False" />
+            <line number="100" hits="0" branch="False" />
+            <line number="101" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="17" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="102" hits="0" branch="False" />
+            <line number="103" hits="0" branch="False" />
+            <line number="106" hits="0" branch="False" />
+            <line number="107" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="36" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="108" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
+            <line number="112" hits="0" branch="False" />
+            <line number="113" hits="0" branch="False" />
+            <line number="114" hits="0" branch="False" />
+            <line number="115" hits="0" branch="False" />
+            <line number="118" hits="0" branch="False" />
+            <line number="119" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="12" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="120" hits="0" branch="False" />
+            <line number="121" hits="0" branch="False" />
+            <line number="124" hits="0" branch="False" />
+            <line number="125" hits="0" branch="False" />
+            <line number="126" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.GeneratorItem`1" filename="source/Contrib.Avro.CodeGen/SchemaParser.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Item" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.GeneratorItem" filename="source/Contrib.Avro.CodeGen/SchemaParser.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Select" signature="(Contrib.Avro.Codegen.GeneratorItem`1&lt;TSource&gt;,System.Func`2&lt;TSource,TResult&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.SchemaResult" filename="source/Contrib.Avro.CodeGen/SchemaParser.cs" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="GetValue" signature="(Microsoft.CodeAnalysis.SourceProductionContext,Contrib.Avro.Codegen.GeneratorItem`1&lt;Avro.Schema&gt;&amp;)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="13" type="jump" coverage="0%" />
+                    <condition number="23" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="13" type="jump" coverage="0%" />
+                <condition number="23" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.SchemaResult/Success" filename="source/Contrib.Avro.CodeGen/SchemaParser.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Source" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="26" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.SchemaResult/Failure" filename="source/Contrib.Avro.CodeGen/SchemaParser.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Item" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="28" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.SchemaParser" filename="source/Contrib.Avro.CodeGen/SchemaParser.cs" line-rate="0" branch-rate="0" complexity="6">
+          <methods>
+            <method name="ParseSchema" signature="(Microsoft.CodeAnalysis.AdditionalText,Contrib.Avro.Codegen.AvroGenOptions,System.Threading.CancellationToken)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="54" hits="0" branch="False" />
+                <line number="55" hits="0" branch="False" />
+                <line number="57" hits="0" branch="False" />
+                <line number="58" hits="0" branch="False" />
+                <line number="59" hits="0" branch="False" />
+                <line number="61" hits="0" branch="False" />
+                <line number="63" hits="0" branch="False" />
+                <line number="65" hits="0" branch="False" />
+                <line number="66" hits="0" branch="False" />
+                <line number="68" hits="0" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="71" hits="0" branch="False" />
+                <line number="72" hits="0" branch="False" />
+                <line number="73" hits="0" branch="False" />
+                <line number="75" hits="0" branch="False" />
+                <line number="76" hits="0" branch="False" />
+                <line number="77" hits="0" branch="False" />
+                <line number="78" hits="0" branch="False" />
+                <line number="79" hits="0" branch="False" />
+                <line number="80" hits="0" branch="False" />
+                <line number="81" hits="0" branch="False" />
+                <line number="82" hits="0" branch="False" />
+                <line number="84" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="LogicalTypeExists" signature="(Newtonsoft.Json.Linq.JToken)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="88" hits="0" branch="False" />
+                <line number="90" hits="0" branch="False" />
+                <line number="91" hits="0" branch="False" />
+                <line number="93" hits="0" branch="False" />
+                <line number="94" hits="0" branch="False" />
+                <line number="95" hits="0" branch="False" />
+                <line number="97" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GetLogicalTypeSubstitute" signature="(System.String,System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="100" hits="0" branch="False" />
+                <line number="101" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="15" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="102" hits="0" branch="False" />
+                <line number="103" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+                <line number="106" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="CleanupUnknownLogicalTypes" signature="(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="109" hits="0" branch="False" />
+                <line number="148" hits="0" branch="False" />
+                <line number="149" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="EraseLogicalSchema" signature="(Avro.Schema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="152" hits="0" branch="False" />
+                <line number="153" hits="0" branch="False" />
+                <line number="154" hits="0" branch="False" />
+                <line number="155" hits="0" branch="False" />
+                <line number="157" hits="0" branch="False" />
+                <line number="158" hits="0" branch="False" />
+                <line number="159" hits="0" branch="False" />
+                <line number="160" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="54" hits="0" branch="False" />
+            <line number="55" hits="0" branch="False" />
+            <line number="57" hits="0" branch="False" />
+            <line number="58" hits="0" branch="False" />
+            <line number="59" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
+            <line number="63" hits="0" branch="False" />
+            <line number="65" hits="0" branch="False" />
+            <line number="66" hits="0" branch="False" />
+            <line number="68" hits="0" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="71" hits="0" branch="False" />
+            <line number="72" hits="0" branch="False" />
+            <line number="73" hits="0" branch="False" />
+            <line number="75" hits="0" branch="False" />
+            <line number="76" hits="0" branch="False" />
+            <line number="77" hits="0" branch="False" />
+            <line number="78" hits="0" branch="False" />
+            <line number="79" hits="0" branch="False" />
+            <line number="80" hits="0" branch="False" />
+            <line number="81" hits="0" branch="False" />
+            <line number="82" hits="0" branch="False" />
+            <line number="84" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+            <line number="90" hits="0" branch="False" />
+            <line number="91" hits="0" branch="False" />
+            <line number="93" hits="0" branch="False" />
+            <line number="94" hits="0" branch="False" />
+            <line number="95" hits="0" branch="False" />
+            <line number="97" hits="0" branch="False" />
+            <line number="100" hits="0" branch="False" />
+            <line number="101" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="15" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="102" hits="0" branch="False" />
+            <line number="103" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
+            <line number="106" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
+            <line number="148" hits="0" branch="False" />
+            <line number="149" hits="0" branch="False" />
+            <line number="152" hits="0" branch="False" />
+            <line number="153" hits="0" branch="False" />
+            <line number="154" hits="0" branch="False" />
+            <line number="155" hits="0" branch="False" />
+            <line number="157" hits="0" branch="False" />
+            <line number="158" hits="0" branch="False" />
+            <line number="159" hits="0" branch="False" />
+            <line number="160" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.SchemaParser/&lt;&gt;c__DisplayClass3_0" filename="source/Contrib.Avro.CodeGen/SchemaParser.cs" line-rate="0" branch-rate="0" complexity="20">
+          <methods>
+            <method name="&lt;CleanupUnknownLogicalTypes&gt;g__Traverse|0" signature="(Newtonsoft.Json.Linq.JToken)" line-rate="0" branch-rate="0" complexity="20">
+              <lines>
+                <line number="111" hits="0" branch="False" />
+                <line number="112" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="19" type="jump" coverage="0%" />
+                    <condition number="32" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="115" hits="0" branch="False" />
+                <line number="116" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="60" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="117" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="85" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="118" hits="0" branch="False" />
+                <line number="119" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="102" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="120" hits="0" branch="False" />
+                <line number="121" hits="0" branch="False" />
+                <line number="122" hits="0" branch="False" />
+                <line number="123" hits="0" branch="False" />
+                <line number="125" hits="0" branch="False" />
+                <line number="129" hits="0" branch="False" />
+                <line number="130" hits="0" branch="False" />
+                <line number="131" hits="0" branch="False" />
+                <line number="132" hits="0" branch="False" />
+                <line number="134" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="215" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="135" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="247" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="136" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="268" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="137" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="299" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="138" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="341" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="140" hits="0" branch="False" />
+                <line number="143" hits="0" branch="False" />
+                <line number="144" hits="0" branch="False" />
+                <line number="146" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="111" hits="0" branch="False" />
+            <line number="112" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="19" type="jump" coverage="0%" />
+                <condition number="32" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="115" hits="0" branch="False" />
+            <line number="116" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="60" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="117" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="85" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="118" hits="0" branch="False" />
+            <line number="119" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="102" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="120" hits="0" branch="False" />
+            <line number="121" hits="0" branch="False" />
+            <line number="122" hits="0" branch="False" />
+            <line number="123" hits="0" branch="False" />
+            <line number="125" hits="0" branch="False" />
+            <line number="129" hits="0" branch="False" />
+            <line number="130" hits="0" branch="False" />
+            <line number="131" hits="0" branch="False" />
+            <line number="132" hits="0" branch="False" />
+            <line number="134" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="215" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="135" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="247" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="136" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="268" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="137" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="299" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="138" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="341" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="140" hits="0" branch="False" />
+            <line number="143" hits="0" branch="False" />
+            <line number="144" hits="0" branch="False" />
+            <line number="146" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Codegen.SchemaUtils" filename="source/Contrib.Avro.CodeGen/SchemaUtils.cs" line-rate="0" branch-rate="0" complexity="51">
+          <methods>
+            <method name="ExtractSchemas" signature="(Avro.Schema)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ExtractSchemas" signature="(Avro.Schema,System.Collections.Generic.Dictionary`2&lt;System.String,Avro.Schema&gt;)" line-rate="0" branch-rate="0" complexity="16">
+              <lines>
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="True" condition-coverage="0% (0/12)">
+                  <conditions>
+                    <condition number="28" type="jump" coverage="0%" />
+                    <condition number="37" type="jump" coverage="0%" />
+                    <condition number="48" type="jump" coverage="0%" />
+                    <condition number="59" type="jump" coverage="0%" />
+                    <condition number="70" type="jump" coverage="0%" />
+                    <condition number="83" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="27" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="138" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="259" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="38" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ReplaceNamespace" signature="(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="12" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="48" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="33" type="jump" coverage="0%" />
+                    <condition number="45" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="False" />
+                <line number="51" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+                <line number="53" hits="0" branch="False" />
+                <line number="55" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="128" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="57" hits="0" branch="False" />
+                <line number="58" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="ReplaceNamespaceImpl" signature="(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;)" line-rate="0" branch-rate="0" complexity="26">
+              <lines>
+                <line number="61" hits="0" branch="False" />
+                <line number="62" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="63" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
+                <line number="65" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="191" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="66" hits="0" branch="False" />
+                <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="85" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="68" hits="0" branch="False" />
+                <line number="69" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="73" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="131" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="74" hits="0" branch="False" />
+                <line number="75" hits="0" branch="False" />
+                <line number="76" hits="0" branch="False" />
+                <line number="78" hits="0" branch="False" />
+                <line number="79" hits="0" branch="False" />
+                <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="232" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="84" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="543" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="85" hits="0" branch="False" />
+                <line number="86" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="291" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="87" hits="0" branch="False" />
+                <line number="88" hits="0" branch="False" />
+                <line number="89" hits="0" branch="False" />
+                <line number="90" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="322" type="jump" coverage="0%" />
+                    <condition number="340" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="91" hits="0" branch="False" />
+                <line number="93" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="359" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="381" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="95" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="517" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="96" hits="0" branch="False" />
+                <line number="97" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="455" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="98" hits="0" branch="False" />
+                <line number="99" hits="0" branch="False" />
+                <line number="101" hits="0" branch="False" />
+                <line number="102" hits="0" branch="False" />
+                <line number="103" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="True" condition-coverage="0% (0/12)">
+              <conditions>
+                <condition number="28" type="jump" coverage="0%" />
+                <condition number="37" type="jump" coverage="0%" />
+                <condition number="48" type="jump" coverage="0%" />
+                <condition number="59" type="jump" coverage="0%" />
+                <condition number="70" type="jump" coverage="0%" />
+                <condition number="83" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="27" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="138" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="259" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="38" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="12" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="48" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="33" type="jump" coverage="0%" />
+                <condition number="45" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+            <line number="51" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+            <line number="53" hits="0" branch="False" />
+            <line number="55" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="128" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="57" hits="0" branch="False" />
+            <line number="58" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
+            <line number="62" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="16" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="63" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
+            <line number="65" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="191" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="66" hits="0" branch="False" />
+            <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="85" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="68" hits="0" branch="False" />
+            <line number="69" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="73" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="131" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="74" hits="0" branch="False" />
+            <line number="75" hits="0" branch="False" />
+            <line number="76" hits="0" branch="False" />
+            <line number="78" hits="0" branch="False" />
+            <line number="79" hits="0" branch="False" />
+            <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="232" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="84" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="543" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="85" hits="0" branch="False" />
+            <line number="86" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="291" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="87" hits="0" branch="False" />
+            <line number="88" hits="0" branch="False" />
+            <line number="89" hits="0" branch="False" />
+            <line number="90" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="322" type="jump" coverage="0%" />
+                <condition number="340" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="91" hits="0" branch="False" />
+            <line number="93" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="359" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="381" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="95" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="517" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="96" hits="0" branch="False" />
+            <line number="97" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="455" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="98" hits="0" branch="False" />
+            <line number="99" hits="0" branch="False" />
+            <line number="101" hits="0" branch="False" />
+            <line number="102" hits="0" branch="False" />
+            <line number="103" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Contrib.Avro.CodeGen.Tests.LogicalTypes" line-rate="0.8181" branch-rate="0.25" complexity="8">
+      <classes>
+        <class name="Contrib.Avro.CodeGen.Tests.LogicalTypes.Duration" filename="tests/Contrib.Avro.CodeGen.Tests.LogicalTypes/Duration.cs" line-rate="0.8181" branch-rate="0.25" complexity="8">
+          <methods>
+            <method name="ValidateSchema" signature="(Avro.LogicalSchema)" line-rate="0.75" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="20" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="ConvertToBaseValue" signature="(System.Object,Avro.LogicalSchema)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="94" branch="False" />
+              </lines>
+            </method>
+            <method name="ConvertToLogicalValue" signature="(System.Object,Avro.LogicalSchema)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="94" branch="False" />
+              </lines>
+            </method>
+            <method name="GetCSharpType" signature="(System.Boolean)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="26" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="1" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="IsInstanceOfLogicalType" signature="(System.Object)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="29" hits="94" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="1" branch="False" />
+                <line number="9" hits="1" branch="False" />
+                <line number="11" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="20" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="20" hits="94" branch="False" />
+            <line number="23" hits="94" branch="False" />
+            <line number="26" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="1" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="29" hits="94" branch="False" />
+            <line number="8" hits="1" branch="False" />
+            <line number="9" hits="1" branch="False" />
+            <line number="11" hits="1" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Contrib.Avro" line-rate="0" branch-rate="0" complexity="217">
+      <classes>
+        <class name="Contrib.Avro.Choice`2" filename="source/Contrib.Avro/Choice/Choice2.cs" line-rate="0" branch-rate="0" complexity="11">
+          <methods>
+            <method name="op_Implicit" signature="(T1)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T2)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Wrap" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="13" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Unwrap" signature="()" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="15" type="jump" coverage="0%" />
+                    <condition number="25" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="13" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="15" type="jump" coverage="0%" />
+                <condition number="25" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`2/Choice1Of2" filename="source/Contrib.Avro/Choice/Choice2.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`2/Choice2Of2" filename="source/Contrib.Avro/Choice/Choice2.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`3" filename="source/Contrib.Avro/Choice/Choice3.cs" line-rate="0" branch-rate="0" complexity="16">
+          <methods>
+            <method name="op_Implicit" signature="(T1)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T2)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T3)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Wrap" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="14" hits="0" branch="True" condition-coverage="0% (0/6)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="44" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Unwrap" signature="()" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="22" hits="0" branch="True" condition-coverage="0% (0/6)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="38" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="14" hits="0" branch="True" condition-coverage="0% (0/6)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="44" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="22" hits="0" branch="True" condition-coverage="0% (0/6)">
+              <conditions>
+                <condition number="16" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="38" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`3/Choice1Of3" filename="source/Contrib.Avro/Choice/Choice3.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`3/Choice2Of3" filename="source/Contrib.Avro/Choice/Choice3.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`3/Choice3Of3" filename="source/Contrib.Avro/Choice/Choice3.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`4" filename="source/Contrib.Avro/Choice/Choice4.cs" line-rate="0" branch-rate="0" complexity="21">
+          <methods>
+            <method name="op_Implicit" signature="(T1)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T2)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T3)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T4)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Wrap" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="19" hits="0" branch="True" condition-coverage="0% (0/8)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="44" type="jump" coverage="0%" />
+                    <condition number="61" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Unwrap" signature="()" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="28" hits="0" branch="True" condition-coverage="0% (0/8)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="38" type="jump" coverage="0%" />
+                    <condition number="49" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+                <line number="6" hits="0" branch="False" />
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="19" hits="0" branch="True" condition-coverage="0% (0/8)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="44" type="jump" coverage="0%" />
+                <condition number="61" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="28" hits="0" branch="True" condition-coverage="0% (0/8)">
+              <conditions>
+                <condition number="16" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="38" type="jump" coverage="0%" />
+                <condition number="49" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+            <line number="6" hits="0" branch="False" />
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`4/Choice1Of4" filename="source/Contrib.Avro/Choice/Choice4.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`4/Choice2Of4" filename="source/Contrib.Avro/Choice/Choice4.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`4/Choice3Of4" filename="source/Contrib.Avro/Choice/Choice4.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`4/Choice4Of4" filename="source/Contrib.Avro/Choice/Choice4.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`5" filename="source/Contrib.Avro/Choice/Choice5.cs" line-rate="0" branch-rate="0" complexity="26">
+          <methods>
+            <method name="op_Implicit" signature="(T1)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T2)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T3)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T4)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T5)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Wrap" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="19" hits="0" branch="True" condition-coverage="0% (0/10)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="44" type="jump" coverage="0%" />
+                    <condition number="61" type="jump" coverage="0%" />
+                    <condition number="78" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Unwrap" signature="()" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="True" condition-coverage="0% (0/10)">
+                  <conditions>
+                    <condition number="17" type="jump" coverage="0%" />
+                    <condition number="28" type="jump" coverage="0%" />
+                    <condition number="39" type="jump" coverage="0%" />
+                    <condition number="50" type="jump" coverage="0%" />
+                    <condition number="63" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="19" hits="0" branch="True" condition-coverage="0% (0/10)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="44" type="jump" coverage="0%" />
+                <condition number="61" type="jump" coverage="0%" />
+                <condition number="78" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="True" condition-coverage="0% (0/10)">
+              <conditions>
+                <condition number="17" type="jump" coverage="0%" />
+                <condition number="28" type="jump" coverage="0%" />
+                <condition number="39" type="jump" coverage="0%" />
+                <condition number="50" type="jump" coverage="0%" />
+                <condition number="63" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`5/Choice1Of5" filename="source/Contrib.Avro/Choice/Choice5.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`5/Choice2Of5" filename="source/Contrib.Avro/Choice/Choice5.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`5/Choice3Of5" filename="source/Contrib.Avro/Choice/Choice5.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`5/Choice4Of5" filename="source/Contrib.Avro/Choice/Choice5.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`5/Choice5Of5" filename="source/Contrib.Avro/Choice/Choice5.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`6" filename="source/Contrib.Avro/Choice/Choice6.cs" line-rate="0" branch-rate="0" complexity="31">
+          <methods>
+            <method name="op_Implicit" signature="(T1)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T2)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T3)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T4)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T5)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T6)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Wrap" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="12">
+              <lines>
+                <line number="21" hits="0" branch="True" condition-coverage="0% (0/12)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="44" type="jump" coverage="0%" />
+                    <condition number="61" type="jump" coverage="0%" />
+                    <condition number="78" type="jump" coverage="0%" />
+                    <condition number="96" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Unwrap" signature="()" line-rate="0" branch-rate="0" complexity="12">
+              <lines>
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="True" condition-coverage="0% (0/12)">
+                  <conditions>
+                    <condition number="17" type="jump" coverage="0%" />
+                    <condition number="28" type="jump" coverage="0%" />
+                    <condition number="39" type="jump" coverage="0%" />
+                    <condition number="50" type="jump" coverage="0%" />
+                    <condition number="63" type="jump" coverage="0%" />
+                    <condition number="76" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="21" hits="0" branch="True" condition-coverage="0% (0/12)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="44" type="jump" coverage="0%" />
+                <condition number="61" type="jump" coverage="0%" />
+                <condition number="78" type="jump" coverage="0%" />
+                <condition number="96" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="True" condition-coverage="0% (0/12)">
+              <conditions>
+                <condition number="17" type="jump" coverage="0%" />
+                <condition number="28" type="jump" coverage="0%" />
+                <condition number="39" type="jump" coverage="0%" />
+                <condition number="50" type="jump" coverage="0%" />
+                <condition number="63" type="jump" coverage="0%" />
+                <condition number="76" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`6/Choice1Of6" filename="source/Contrib.Avro/Choice/Choice6.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`6/Choice2Of6" filename="source/Contrib.Avro/Choice/Choice6.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`6/Choice3Of6" filename="source/Contrib.Avro/Choice/Choice6.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`6/Choice4Of6" filename="source/Contrib.Avro/Choice/Choice6.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`6/Choice5Of6" filename="source/Contrib.Avro/Choice/Choice6.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`6/Choice6Of6" filename="source/Contrib.Avro/Choice/Choice6.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="0" complexity="36">
+          <methods>
+            <method name="op_Implicit" signature="(T1)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T2)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T3)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T4)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T5)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T6)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T7)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Wrap" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="14">
+              <lines>
+                <line number="23" hits="0" branch="True" condition-coverage="0% (0/14)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="44" type="jump" coverage="0%" />
+                    <condition number="61" type="jump" coverage="0%" />
+                    <condition number="78" type="jump" coverage="0%" />
+                    <condition number="96" type="jump" coverage="0%" />
+                    <condition number="114" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Unwrap" signature="()" line-rate="0" branch-rate="0" complexity="14">
+              <lines>
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="True" condition-coverage="0% (0/14)">
+                  <conditions>
+                    <condition number="17" type="jump" coverage="0%" />
+                    <condition number="28" type="jump" coverage="0%" />
+                    <condition number="39" type="jump" coverage="0%" />
+                    <condition number="50" type="jump" coverage="0%" />
+                    <condition number="63" type="jump" coverage="0%" />
+                    <condition number="76" type="jump" coverage="0%" />
+                    <condition number="89" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="23" hits="0" branch="True" condition-coverage="0% (0/14)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="44" type="jump" coverage="0%" />
+                <condition number="61" type="jump" coverage="0%" />
+                <condition number="78" type="jump" coverage="0%" />
+                <condition number="96" type="jump" coverage="0%" />
+                <condition number="114" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="True" condition-coverage="0% (0/14)">
+              <conditions>
+                <condition number="17" type="jump" coverage="0%" />
+                <condition number="28" type="jump" coverage="0%" />
+                <condition number="39" type="jump" coverage="0%" />
+                <condition number="50" type="jump" coverage="0%" />
+                <condition number="63" type="jump" coverage="0%" />
+                <condition number="76" type="jump" coverage="0%" />
+                <condition number="89" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7/Choice1Of7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7/Choice2Of7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7/Choice3Of7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7/Choice4Of7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7/Choice5Of7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7/Choice6Of7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`7/Choice7Of7" filename="source/Contrib.Avro/Choice/Choice7.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="0" complexity="41">
+          <methods>
+            <method name="op_Implicit" signature="(T1)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T2)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T3)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T4)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T5)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T6)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T7)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="op_Implicit" signature="(T8)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Wrap" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="16">
+              <lines>
+                <line number="25" hits="0" branch="True" condition-coverage="0% (0/16)">
+                  <conditions>
+                    <condition number="10" type="jump" coverage="0%" />
+                    <condition number="27" type="jump" coverage="0%" />
+                    <condition number="44" type="jump" coverage="0%" />
+                    <condition number="61" type="jump" coverage="0%" />
+                    <condition number="78" type="jump" coverage="0%" />
+                    <condition number="96" type="jump" coverage="0%" />
+                    <condition number="114" type="jump" coverage="0%" />
+                    <condition number="132" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="Unwrap" signature="()" line-rate="0" branch-rate="0" complexity="16">
+              <lines>
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="True" condition-coverage="0% (0/16)">
+                  <conditions>
+                    <condition number="17" type="jump" coverage="0%" />
+                    <condition number="28" type="jump" coverage="0%" />
+                    <condition number="39" type="jump" coverage="0%" />
+                    <condition number="50" type="jump" coverage="0%" />
+                    <condition number="63" type="jump" coverage="0%" />
+                    <condition number="76" type="jump" coverage="0%" />
+                    <condition number="89" type="jump" coverage="0%" />
+                    <condition number="105" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="False" />
+                <line number="51" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="25" hits="0" branch="True" condition-coverage="0% (0/16)">
+              <conditions>
+                <condition number="10" type="jump" coverage="0%" />
+                <condition number="27" type="jump" coverage="0%" />
+                <condition number="44" type="jump" coverage="0%" />
+                <condition number="61" type="jump" coverage="0%" />
+                <condition number="78" type="jump" coverage="0%" />
+                <condition number="96" type="jump" coverage="0%" />
+                <condition number="114" type="jump" coverage="0%" />
+                <condition number="132" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="True" condition-coverage="0% (0/16)">
+              <conditions>
+                <condition number="17" type="jump" coverage="0%" />
+                <condition number="28" type="jump" coverage="0%" />
+                <condition number="39" type="jump" coverage="0%" />
+                <condition number="50" type="jump" coverage="0%" />
+                <condition number="63" type="jump" coverage="0%" />
+                <condition number="76" type="jump" coverage="0%" />
+                <condition number="89" type="jump" coverage="0%" />
+                <condition number="105" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+            <line number="51" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice1Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice2Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice3Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice4Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice5Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice6Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice7Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Contrib.Avro.Choice`8/Choice8Of8" filename="source/Contrib.Avro/Choice/Choice8.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

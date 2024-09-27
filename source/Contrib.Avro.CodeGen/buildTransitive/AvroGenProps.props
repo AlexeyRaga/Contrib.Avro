@@ -1,0 +1,10 @@
+<Project>
+    <ItemGroup>
+        <CompilerVisibleProperty Include="Avro_NamespaceMapping" />
+        <CompilerVisibleProperty Include="Avro_GenerateRequiredFields" />
+        <CompilerVisibleProperty Include="Avro_LogicalTypes" />
+        <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="NamespaceMapping" />
+        <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="LogicalTypes" />
+        <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="GenerateRequiredFields" />
+    </ItemGroup>
+</Project>

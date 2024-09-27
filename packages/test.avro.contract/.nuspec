@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>test.avro.contract</id>
+        <version>1.0.6</version>
+        <authors>Alexey Raga</authors>
+        <description>A package that contains Avro schema files (*.avsc).</description>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>avro schema</tags>
+    </metadata>
+    <files>
+        <!-- Include all .avsc files from the Schemas folder -->
+        <file src="**\*.avsc" target="schemas/avro/test.avro.contract/" />
+    </files>
+</package>

@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+        <RootNamespace>Contrib.Avro.CodeGen.Tests</RootNamespace>
+    </PropertyGroup>
+
+    <Import Project="..\..\source\Contrib.Avro.Codegen\buildTransitive\AvroGenProps.props" />
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector" Version="6.0.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="FluentAssertions" Version="7.0.0-alpha.4" />
+        <PackageReference Include="FsCheck" Version="3.0.0-rc3" />
+        <PackageReference Include="FsCheck.Xunit" Version="3.0.0-rc3" />
+        <PackageReference Include="Hedgehog" Version="0.13.0" />
+        <PackageReference Include="Hedgehog.Xunit" Version="0.6.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+        <PackageReference Include="Strongly" Version="1.5.1" />
+        <PackageReference Include="test.avro.contract" Version="1.0.6" GeneratePathProperty="true" />
+        <PackageReference Include="xunit" Version="2.9.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Xunit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Apache.Avro" Version="1.12.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\source\Contrib.Avro.Codegen\Contrib.Avro.Codegen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+        <ProjectReference Include="..\..\source\Contrib.Avro\Contrib.Avro.csproj" />
+        <ProjectReference Include="..\Contrib.Avro.CodeGen.Tests.LogicalTypes\Contrib.Avro.CodeGen.Tests.LogicalTypes.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <Avro_LogicalTypes></Avro_LogicalTypes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="$(PkgTest_avro_contract)\schemas\**\*.avsc"
+                         NamespaceMapping="Contrib.Avro.CodeGen.Tests.Messages:Contrib.Avro.CodeGen.TestMessages"
+                         LogicalTypes="duration:System.TimeSpan,user-id:Contrib.Avro.CodeGen.Tests.UserId"/>
+    </ItemGroup>
+
+</Project>

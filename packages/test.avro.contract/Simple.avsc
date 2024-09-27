@@ -1,0 +1,65 @@
+[
+  {
+    "type": "record",
+    "name": "Simple",
+    "doc": "A simple record with simple fields",
+    "namespace": "Contrib.Avro.CodeGen.Tests.Messages",
+    "fields": [
+      {
+        "name": "id",
+        "type":
+        {
+          "type": "string",
+          "logicalType": "user-id"
+        },
+        "doc": "The id of the record",
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "doc": "The name of the record"
+      },
+      {
+        "name": "age",
+        "type": [
+          "null",
+          "int"
+        ],
+        "doc": "The age of the record",
+        "default": null
+      },
+      {
+        "name": "result",
+        "type": [
+          "null",
+          {
+            "type": "int",
+            "logicalType": "duration"
+          }
+        ],
+      },
+      {
+        "name": "contactType",
+        "type": [
+          "null",
+          {
+            "type": "enum",
+            "name": "ContactType",
+            "symbols": [
+              "Email",
+              "Phone"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "license",
+        "type": [
+          "null",
+          "string",
+          "int"
+        ]
+      }
+    ]
+  }
+]
