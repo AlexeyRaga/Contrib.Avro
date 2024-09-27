@@ -9,11 +9,10 @@ public sealed record AvroGenOptions(
 {
     public static AvroGenOptions Create(AnalyzerConfigOptions options)
     {
-        var namespaceMapping = options.GetMsBuildProperty("NamespaceMapping")?.AsDictionary() ?? [];
-
         var genRequired = !bool.TryParse(options.GetMsBuildProperty("GenerateRequiredFields"), out var value) || value;
 
-        var logicalTypes = options.GetMsBuildProperty("LogicalTypes")?.AsDictionary() ?? [];
+        var namespaceMapping = options.GetMsBuildDictionary("NamespaceMapping");
+        var logicalTypes = options.GetMsBuildDictionary("LogicalTypes");
 
         return new AvroGenOptions(namespaceMapping, logicalTypes, genRequired);
     }

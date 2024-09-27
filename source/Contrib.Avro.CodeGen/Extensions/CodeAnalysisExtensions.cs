@@ -1,33 +1,24 @@
-using System.Diagnostics.CodeAnalysis;
-using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace Contrib.Avro.Codegen;
 
 public static class CodeAnalysisExtensions
 {
-    public static string GetMsBuildProperty(
-        this GeneratorExecutionContext context,
+    public static Dictionary<string, string> GetMsBuildDictionary(
+        this AnalyzerConfigOptions opts,
         string name,
-        string defaultValue = "")
+        string keyValueDelimiter = ":",
+        string entryDelimiter = ",")
     {
-        context.AnalyzerConfigOptions.GlobalOptions.TryGetValue($"build_property.Avro_{name}", out var value);
-        return value ?? defaultValue;
-    }
+        var defaultOpts = opts.GetValueDefault($"build_metadata.AdditionalFiles.{name}")?
+            .AsDictionary(keyValueDelimiter, entryDelimiter) ?? [];
 
-    public static string? GetMsBuildProperty(
-        this AnalyzerConfigOptionsProvider provider,
-        AdditionalText text,
-        string name)
-    {
-        var opts = provider.GetOptions(text);
-        if ((opts.TryGetValue($"build_metadata.AdditionalFiles.{name}", out var v) && !string.IsNullOrWhiteSpace(v))
-            || opts.TryGetValue($"build_property.Avro_{name}", out v) && !string.IsNullOrWhiteSpace(v))
-        {
-            return v;
-        }
+        var itemOpts = opts.GetValueDefault($"build_property.Avro_{name}")?
+            .AsDictionary(keyValueDelimiter, entryDelimiter) ?? [];
 
-        return null;
+        foreach (var (k, v) in itemOpts) defaultOpts[k] = v;
+
+        return defaultOpts;
     }
 
     public static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
@@ -41,12 +32,18 @@ public static class CodeAnalysisExtensions
         return null;
     }
 
-    public static Dictionary<string, string> AsDictionary(this string value)
+    private static string? GetValueDefault(this AnalyzerConfigOptions opts, string fullName) =>
+        opts.TryGetValue(fullName, out var v) && !string.IsNullOrWhiteSpace(v) ? v : null;
+
+    private static Dictionary<string, string> AsDictionary(
+        this string value,
+        string keyValueDelimiter = ":",
+        string entryDelimiter = ",")
     {
         return value
-            .Split(',', StringSplitOptions.TrimEntries)
+            .Split(entryDelimiter, StringSplitOptions.TrimEntries)
             .Where(x => !string.IsNullOrWhiteSpace(x))
-            .Select(x => x.Split(':', 2, StringSplitOptions.TrimEntries))
+            .Select(x => x.Split(keyValueDelimiter, 2, StringSplitOptions.TrimEntries))
             .Where(x => x.Length == 2)
             .ToDictionary(x => x[0], x => x[1]);
     }
