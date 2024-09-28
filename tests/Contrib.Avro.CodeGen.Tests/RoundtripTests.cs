@@ -1,3 +1,4 @@
+using Avro.Specific;
 using Contrib.Avro.CodeGen.TestMessages;
 using Contrib.Avro.CodeGen.Tests.LogicalTypes;
 using FluentAssertions;
@@ -43,7 +44,11 @@ public class RoundtripTests
     {
         var bytes = msg.SerializeToBinary();
         var deserialized = AvroUtils.DeserializeFromBinary<Simple>(bytes);
+        msg.name.Should().NotContain("f");
         deserialized.Should().BeEquivalentTo(msg);
-
     }
 }
+
+
+public record B(bool b);
+public record A(int X, string Y, B b, float c);

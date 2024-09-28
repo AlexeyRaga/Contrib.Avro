@@ -23,6 +23,9 @@ public static class CodeAnalysisExtensions
 
     public static bool GetMsBuildBoolean(this AnalyzerConfigOptions opts, string name, bool defaultValue = false) => bool.TryParse(opts.GetMsBuildProperty(name), out var value) ? value : defaultValue;
 
+    public static T GetMsBuildEnum<T>(this AnalyzerConfigOptions opts, string name, T defaultValue = default) where T : struct =>
+        Enum.TryParse<T>(opts.GetMsBuildProperty(name), true, out var value) ? value : defaultValue;
+
     private static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
     {
         if ((opts.TryGetValue($"build_metadata.AdditionalFiles.{name}", out var v) && !string.IsNullOrWhiteSpace(v))

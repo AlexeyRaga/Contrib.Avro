@@ -51,6 +51,7 @@ public sealed class AvroSourceGen : IIncrementalGenerator
     {
         var schema = item.Value;
         var name = CodeGenUtil.Instance.Mangle(schema.Name);
+        var classOrRecord = item.Options.GenerateRecords ? "record" : "class";
 
         var fields = schema.Fields
             .Select(x => new AvroField(x, CodeGenUtil.Instance.Mangle(x.Name), GetAvroType(x.Schema, false)))
@@ -60,10 +61,11 @@ public sealed class AvroSourceGen : IIncrementalGenerator
 {BuildFileHeader(schema)}
 
 {BuildTypeDocumentation(schema)}
-public partial class {name}() : global::Avro.Specific.ISpecificRecord, global::Contrib.Avro.IHaveAvroSchema 
+{BuildDebuggerDisplay(name, fields, item.Options.DebuggerDisplayFields)}
+public partial {classOrRecord} {name}() : global::Avro.Specific.ISpecificRecord, global::Contrib.Avro.IHaveAvroSchema 
 {{
     public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse({JsonConvert.ToString(schema.ToString())});
-    public virtual global::Avro.Schema Schema => {name}._SCHEMA;
+    global::Avro.Schema global::Avro.Specific.ISpecificRecord.Schema => {name}._SCHEMA;
 
     static global::Avro.Schema global::Contrib.Avro.IHaveAvroSchema.Schema => {name}._SCHEMA;
 
@@ -277,6 +279,21 @@ public {(field.Type.Nullable || !options.GenerateRequiredFields ? "" : "required
             .EndAllBlocks()
             .ToString()
             .Trim();
+
+    private static string BuildDebuggerDisplay(string typeName, List<AvroField> fields, DebuggerDisplayFields displayFields)
+    {
+        if (displayFields == DebuggerDisplayFields.None) return string.Empty;
+
+        var fieldsToDisplay = displayFields switch
+        {
+            DebuggerDisplayFields.All => fields,
+            DebuggerDisplayFields.Required => fields.Where(x => !x.Type.Nullable).ToList(),
+            _ => throw new ArgumentOutOfRangeException(nameof(displayFields), displayFields, null)
+        };
+
+        var fieldsString = string.Join(", ", fieldsToDisplay.Select(x => $"{x.Name} = {{{x.Name}}}"));
+        return $@"[System.Diagnostics.DebuggerDisplay(""{typeName}({fieldsString})"")]";
+    }
 
     public static string BuildFileHeader(NamedSchema schema) =>
         $@"

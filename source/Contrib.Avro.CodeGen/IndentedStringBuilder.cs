@@ -49,6 +49,34 @@ internal class IndentedStringBuilder(int indentationSize = 4, int initialIndenta
     public IndentedStringBuilder AppendMany<T>(IEnumerable<T> values, Func<T, string> toLine) =>
         values.Aggregate(this, (builder, value) => builder.AppendLine(toLine(value)));
 
+    public IndentedStringBuilder AppendMany<T>(
+        IEnumerable<T> values,
+        string startLineDelimiter,
+        string endLineDelimiter,
+        Func<T, string> toLine)
+    {
+        var isStart = true;
+        foreach (var value in values)
+        {
+            if (!isStart)
+            {
+                if (!string.IsNullOrEmpty(endLineDelimiter))
+                    AppendLine(endLineDelimiter);
+                else AppendLine();
+                if (!string.IsNullOrEmpty(startLineDelimiter)) Append(startLineDelimiter);
+            }
+            else
+            {
+                isStart = false;
+            }
+            Append(toLine(value));
+        }
+
+        AppendLine();
+        return this;
+    }
+
+
     private StringBuilder AppendValue(string value)
     {
         if (string.IsNullOrEmpty(value)) return _stringBuilder;
