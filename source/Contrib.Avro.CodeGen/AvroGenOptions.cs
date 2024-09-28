@@ -19,7 +19,7 @@ public sealed record AvroGenOptions(
 {
     public static AvroGenOptions Create(AnalyzerConfigOptions options)
     {
-        var genRequired = options.GetMsBuildBoolean("GenerateRequiredFields");
+        var genRequired = options.GetMsBuildBoolean("GenerateRequiredFields", true);
         var genRecords = options.GetMsBuildBoolean("GenerateRecords");
         var failUnknownLogicalTypes = options.GetMsBuildBoolean("FailUnknownLogicalTypes");
         var dbgDisplayFields = options.GetMsBuildEnum("DebuggerDisplayFields", DebuggerDisplayFields.None);

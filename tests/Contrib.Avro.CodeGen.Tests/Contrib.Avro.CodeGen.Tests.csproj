@@ -52,6 +52,7 @@
         <Avro_GenerateRequiredFields>true</Avro_GenerateRequiredFields>
         <Avro_DebuggerDisplayFields>required</Avro_DebuggerDisplayFields>
         <Avro_LogicalTypes>user-id:Contrib.Avro.CodeGen.Tests.UserId</Avro_LogicalTypes>
+        <Avro_NamespaceMapping>Contrib.Avro.CodeGen.Tests.Messages:Testing.Messages</Avro_NamespaceMapping>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,10 +1,9 @@
-using Avro.Specific;
-using Contrib.Avro.CodeGen.TestMessages;
 using Contrib.Avro.CodeGen.Tests.LogicalTypes;
 using FluentAssertions;
 using Hedgehog;
 using Hedgehog.Linq;
 using Hedgehog.Xunit;
+using Testing.Messages;
 using Gen = Hedgehog.Linq.Gen;
 using Range = Hedgehog.Linq.Range;
 
