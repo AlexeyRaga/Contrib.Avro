@@ -14,14 +14,15 @@ public static class Generators
     public static Gen<Simple> Simple()
     {
         return from id in Gen.Guid.NoShrink().Select(x => new UserId(x))
-               from name in Gen.AlphaNumeric.String(Range.LinearInt32(0, 100))
-               from duration in Gen.Int32(Range.LinearInt32(0, 10000)).Select(x => TimeSpan.FromMilliseconds(x)).NullValue()
-               select new Simple
-               {
-                   id = id,
-                   name = name,
-                   result = duration
-               };
+            from name in Gen.AlphaNumeric.String(Range.LinearInt32(0, 100))
+            from duration in Gen.Int32(Range.LinearInt32(0, 10000)).Select(x => TimeSpan.FromMilliseconds(x))
+                .NullValue()
+            select new Simple
+            {
+                id = id,
+                name = name,
+                result = duration
+            };
     }
 
     public static AutoGenConfig Config =>

@@ -1,0 +1,15 @@
+{
+  "type": "record",
+    "name": "InProject",
+    "namespace": "Contrib.Avro.CodeGen.Tests",
+    "fields": [
+      {
+        "name": "Id",
+        "type": "int"
+      },
+      {
+        "name": "Md5",
+        "type": {"type": "fixed", "size": 16, "name": "MD5"}
+      }
+    ]
+}

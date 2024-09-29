@@ -94,12 +94,28 @@ public partial class {name} : global::Avro.Specific.SpecificFixed, global::Contr
 {{
     public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse({JsonConvert.ToString(schema.ToString())});
     public override global::Avro.Schema Schema {{ get {{ return {name}._SCHEMA; }} }}
-
     static global::Avro.Schema global::Contrib.Avro.IHaveAvroSchema.Schema => {name}._SCHEMA;
+
+    public static uint FixedSize => {schema.Size};
 
     public {name}() : base({schema.Size}) {{ }}
 
-    public static uint FixedSize => {schema.Size};
+    public {name}(IEnumerable<byte> value) : this() 
+    {{
+        Value = value.ToArray(); 
+    }}
+
+    public static bool operator ==({name} left, {name} right) =>
+        ReferenceEquals(left, null) || left.Equals(right);
+
+    public static bool operator !=({name} left, {name} right) => 
+        !(left == right);
+
+    /// <inheritdoc />
+    public override int GetHashCode() => base.GetHashCode();
+
+    /// <inheritdoc />
+    public override bool Equals(object obj) => base.Equals(obj);
 }}
 ");
     }

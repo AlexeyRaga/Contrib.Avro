@@ -59,6 +59,7 @@
         <AdditionalFiles Include="$(PkgTest_avro_contract)\schemas\**\*.avsc"
                          NamespaceMapping="Contrib.Avro.CodeGen.Tests.Messages:Contrib.Avro.CodeGen.TestMessages"
                          LogicalTypes="duration:System.TimeSpan" />
+        <AdditionalFiles Include="avro/*.avsc" />
     </ItemGroup>
 
 </Project>
