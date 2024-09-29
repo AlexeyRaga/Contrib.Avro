@@ -26,7 +26,7 @@ public sealed class BasicTests
     [Property]
     public void Should_have_equality_for_fixed_types(MD5 md5)
     {
-        var other = new MD5(md5.Value.Reverse().Reverse().ToArray());
+        var other = new MD5((byte[])md5.Value.Clone());
 
         (other.Value == md5.Value).Should().BeFalse();
         (other == md5).Should().BeTrue();

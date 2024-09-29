@@ -118,10 +118,8 @@ public partial class {name} : global::Avro.Specific.SpecificFixed, global::Contr
     /// <inheritdoc />
     public override bool Equals(object obj) => base.Equals(obj);
 
-    private string GetDebuggerDisplay()
-    {{
-        return $""[{{string.Join("", "", Value.Select(b => $""x{{b:X2}}""))}}]"";
-    }}
+    private string GetDebuggerDisplay() =>
+        $""[{{string.Join("", "", Value.Select(b => b.ToString()))}}]"";
 }}
 ");
     }
