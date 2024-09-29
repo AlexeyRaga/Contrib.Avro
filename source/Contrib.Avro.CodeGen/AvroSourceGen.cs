@@ -90,6 +90,7 @@ public partial {classOrRecord} {name}() : global::Avro.Specific.ISpecificRecord,
 {BuildFileHeader(schema)}
 
 {BuildTypeDocumentation(schema)}
+[System.Diagnostics.DebuggerDisplay(""{name}({{GetDebuggerDisplay(),nq}})"")]
 public partial class {name} : global::Avro.Specific.SpecificFixed, global::Contrib.Avro.IHaveAvroSchema
 {{
     public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse({JsonConvert.ToString(schema.ToString())});
@@ -116,6 +117,11 @@ public partial class {name} : global::Avro.Specific.SpecificFixed, global::Contr
 
     /// <inheritdoc />
     public override bool Equals(object obj) => base.Equals(obj);
+
+    private string GetDebuggerDisplay()
+    {{
+        return $""[{{string.Join("", "", Value.Select(b => $""x{{b:X2}}""))}}]"";
+    }}
 }}
 ");
     }
