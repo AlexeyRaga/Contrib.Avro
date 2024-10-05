@@ -21,6 +21,11 @@ internal sealed class RegisteredLogicalType(string name, string dotnetType) : Lo
 
     public override bool IsInstanceOfLogicalType(object logicalValue) =>
         throw new InvalidOperationException("This type should only be used for code generation.");
+
+    public override string ToString()
+    {
+        return $"RegisteredLogicalType({Name}, {DotnetTypeHint})";
+    }
 }
 
 internal sealed class UnknownLogicalType(string name) : LogicalType(name)

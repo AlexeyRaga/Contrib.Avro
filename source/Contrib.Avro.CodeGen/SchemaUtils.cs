@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Contrib.Avro.Codegen;
 
-internal static class SchemaUtils
+public static class SchemaUtils
 {
     public static IList<Schema> ExtractSchemas(Schema schema)
     {

@@ -1,0 +1,33 @@
+{
+  "type": "record",
+  "name": "MessageWithFixedTypes",
+  "namespace": "Contrib.Avro.CodeGen.Tests",
+  "fields": [
+    {
+      "name": "Md5",
+      "type": {
+        "type": "fixed",
+        "size": 16,
+        "name": "MD5"
+      }
+    },
+    {
+      "name": "Md5Array",
+      "type": {
+        "type": "array",
+        "items": "MD5"
+      }
+    },
+    {
+      "name": "Md5Map",
+      "type": {
+        "type": "map",
+        "values": "MD5"
+      }
+    },
+    {
+      "name": "Md5Union",
+      "type": ["null", "MD5"]
+    }
+  ]
+}

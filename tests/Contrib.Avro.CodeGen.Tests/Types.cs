@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Avro;
 using Avro.Util;
 using Strongly;

@@ -5,9 +5,11 @@
         <CompilerVisibleProperty Include="Avro_DebuggerDisplayFields" />
         <CompilerVisibleProperty Include="Avro_GenerateRecords" />
         <CompilerVisibleProperty Include="Avro_LogicalTypes" />
+        <CompilerVisibleProperty Include="Avro_LogicalTypeHintName" />
         <CompilerVisibleProperty Include="Avro_FailUnknownLogicalTypes" />
         <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="NamespaceMapping" />
         <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="LogicalTypes" />
+        <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="LogicalTypeHintName" />
         <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="FailUnknownLogicalTypes" />
         <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="GenerateRequiredFields" />
         <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="DebuggerDisplayFields" />

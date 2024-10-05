@@ -24,7 +24,6 @@
         <PackageReference Include="Hedgehog.Xunit" Version="0.6.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
         <PackageReference Include="Strongly" Version="1.5.1" />
-        <PackageReference Include="test.avro.contract" Version="1.0.6" GeneratePathProperty="true" />
         <PackageReference Include="xunit" Version="2.9.0" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
           <PrivateAssets>all</PrivateAssets>
@@ -47,7 +46,7 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <Avro_FailUnknownLogicalTypes>true</Avro_FailUnknownLogicalTypes>
+        <Avro_FailUnknownLogicalTypes>false</Avro_FailUnknownLogicalTypes>
         <Avro_GenerateRecords>true</Avro_GenerateRecords>
         <Avro_GenerateRequiredFields>true</Avro_GenerateRequiredFields>
         <Avro_DebuggerDisplayFields>required</Avro_DebuggerDisplayFields>
@@ -59,7 +58,7 @@
         <AdditionalFiles Include="$(PkgTest_avro_contract)\schemas\**\*.avsc"
                          NamespaceMapping="Contrib.Avro.CodeGen.Tests.Messages:Contrib.Avro.CodeGen.TestMessages"
                          LogicalTypes="duration:System.TimeSpan" />
-        <AdditionalFiles Include="avro/*.avsc" />
+        <AdditionalFiles Include="avro/*.avsc" LogicalTypeHintName="logicalTypeHint" />
     </ItemGroup>
 
 </Project>

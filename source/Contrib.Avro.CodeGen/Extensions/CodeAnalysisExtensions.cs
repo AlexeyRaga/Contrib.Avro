@@ -26,7 +26,7 @@ public static class CodeAnalysisExtensions
     public static T GetMsBuildEnum<T>(this AnalyzerConfigOptions opts, string name, T defaultValue = default) where T : struct =>
         Enum.TryParse<T>(opts.GetMsBuildProperty(name), true, out var value) ? value : defaultValue;
 
-    private static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
+    public static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
     {
         if ((opts.TryGetValue($"build_metadata.AdditionalFiles.{name}", out var v) && !string.IsNullOrWhiteSpace(v))
             || opts.TryGetValue($"build_property.Avro_{name}", out v) && !string.IsNullOrWhiteSpace(v))

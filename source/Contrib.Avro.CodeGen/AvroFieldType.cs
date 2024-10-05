@@ -7,7 +7,7 @@ internal sealed record AvroFieldType(
     string Type,
     Schema Schema,
     bool Nullable = false,
-    string? Unwrapper = null,
+    Func<string, string>? Unwrapper = null,
     Func<string, string>? Wrapper = null)
 {
     public string FullType => Type + (Nullable ? "?" : "");
