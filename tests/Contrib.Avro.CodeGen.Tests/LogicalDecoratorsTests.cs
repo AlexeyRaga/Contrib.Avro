@@ -15,49 +15,47 @@ public sealed class BasicTests
     {
         global::Avro.Util.LogicalTypeFactory.Instance.Register(new UserIdLogicalType());
     }
-    public static class Generators
+
+    private static class Generators
     {
-        public static Gen<UserId> UserId =>
+        private static Gen<UserId> UserId =>
             Gen.Guid.NoShrink().Select(x => new UserId(x));
 
-        public static Gen<MD5> MD5 =>
-            Gen.Byte(Range.LinearBoundedByte())
-                .Array(Range.Constant(16, 16))
-                .Select(x => new MD5(x));
+        private static Gen<Dictionary<string, T>> Map<T>(Gen<T> valueGen, Range<int> range) =>
+            valueGen
+                .Array(range)
+                .Select(xs => xs.Select((x, i) => (x, i)).ToDictionary(x => x.i.ToString(), x => x.x));
 
-        public static Gen<MessageWithLogicalDecorators> InProject =>
+        private static Gen<MessageWithLogicalDecorators> MessageWithLogicalDecorators =>
             from id in UserId
             from cid in UserId.NullValue()
+            from arr in UserId.Array(Range.Constant(0, 5))
+            from arrNull in UserId.NullValue().Array(Range.Constant(0, 5))
+            from map in Map(UserId, Range.Constant(0, 10))
+            from mapNull in Map(UserId.NullValue(), Range.Constant(0, 10))
             from choice in Gen.Choice(new List<Gen<Choice<int, UserId>>>
             {
                 Gen.Int32(Range.LinearBoundedInt32()).Select(Choice<int, UserId>.FromValue),
                 UserId.Select(Choice<int, UserId>.FromValue)
             })
-            from md5 in MD5
             select new MessageWithLogicalDecorators
             {
                 Id = id,
                 createdBy = cid,
-                decoratedInChoice = choice
+                decoratedInChoice = choice,
+                decoratedInArray = arr,
+                decoratedNullableInArray = arrNull,
+                decoratedInMap = map,
+                decoratedNullableInMap = mapNull
             };
 
         public static AutoGenConfig Config =>
             GenX.defaults
-                .WithGenerator(InProject)
-                .WithGenerator(MD5);
+                .WithGenerator(UserId)
+                .WithGenerator(MessageWithLogicalDecorators);
     }
 
     [Property]
-    public void Should_have_equality_for_fixed_types(MD5 md5)
-    {
-        var other = new MD5((byte[])md5.Value.Clone());
-
-        (other.Value == md5.Value).Should().BeFalse();
-        (other == md5).Should().BeTrue();
-        other.Equals(md5).Should().BeTrue();
-    }
-
-    [Property, Recheck("0_10321898184904394126_6839591380452281685_000000000000")]
     public void Should_roundtrip_avro_message(MessageWithLogicalDecorators msg)
     {
         var bytes = msg.SerializeToBinary();

@@ -1,5 +1,4 @@
 using Avro;
-using Avro.Util;
 using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
 
@@ -186,25 +185,47 @@ public enum {name}
                 var arraySchema = (ArraySchema)schema;
 
                 var itemType = GetAvroType(options, arraySchema.ItemSchema, false);
-                var arrayType = $"IList<{itemType.Type}>";
-                Func<string, string>? unwrapper = x => itemType.Unwrapper is not null ? $"{x}.Select(x => x{itemType.Unwrapper}).ToList()" : x;
-                Func<string, string>? wrapper =
+                var arrayType = $"IList<{itemType.FullType}>";
+
+                Func<string, string>? itemUnwrapper =
+                    itemType.Unwrapper is not null
+                        ? x => $"{x}?.Select(x => {itemType.Unwrapper("x")}).ToList()"
+                        : null;
+
+                Func<string, string>? itemWrapper =
                     itemType.Wrapper is not null
-                        ? v => $"((IList<System.Object>){v}).Select(x => {itemType.Wrapper("x")}).ToList()"
+                        ? v =>
+                            $"((IEnumerable<{itemType.FullBaseType}>){v}).Select(x => {itemType.Wrapper("x")}).ToList()"
                         : null;
 
                 return new AvroFieldType(
                     arrayType,
                     Schema: schema,
-                    Unwrapper: unwrapper,
-                    Wrapper: wrapper,
+                    Unwrapper: itemUnwrapper,
+                    Wrapper: itemWrapper,
                     Nullable: nullable);
 
             case Schema.Type.Map:
                 var mapSchema = (MapSchema)schema;
+                var valueType = GetAvroType(options, mapSchema.ValueSchema, false);
+
+                Func<string, string>? valueUnwrapper =
+                    valueType.Unwrapper is not null
+                        ? x => $"{x}?.ToDictionary(x => x.Key, x => {valueType.Unwrapper("x.Value")})"
+                        : null;
+
+                Func<string, string>? valueWrapper =
+                    valueType.Wrapper is not null
+                        ? v =>
+                            $"((IDictionary<string, {valueType.FullBaseType}>){v}).ToDictionary(x => x.Key, x => {valueType.Wrapper("x.Value")})"
+                        : null;
+
                 return new AvroFieldType(
-                    "IDictionary<string," + GetAvroType(options, mapSchema.ValueSchema, false).Type + ">",
-                    Schema: schema);
+                    "IDictionary<string," + valueType.FullType + ">",
+                    Schema: schema,
+                    Wrapper: valueWrapper,
+                    Unwrapper: valueUnwrapper,
+                    Nullable: true);
 
             case Schema.Type.Union:
                 var unionSchema = (UnionSchema)schema;
@@ -217,14 +238,43 @@ public enum {name}
                     return GetAvroType(options, schemas[0], true);
                 }
 
-                var choiceTypes = schemas.Select(x => GetAvroType(options, x, false).Type);
-                var choiceType = $"Contrib.Avro.Choice<{string.Join(", ", choiceTypes)}>";
+                var choiceTypes = schemas.Select(x => GetAvroType(options, x, false)).ToList();
+                var choiceType = $"Contrib.Avro.Choice<{string.Join(", ", choiceTypes.Select(x => x.Type))}>";
+
+                var choiceUnwrapper = (string what) => new IndentedStringBuilder(initialIndentationLevel: 1)
+                    .AppendLine($"{what} switch")
+                    .StartBlock("{", "}")
+                    .AppendLine("null => null,")
+                    .AppendMany(choiceTypes,
+                        (x, i) =>
+                        {
+                            var returnValue = x.Unwrapper?.Invoke("x") ?? "x";
+                            return $"{choiceType}.Choice{i + 1}Of{choiceTypes.Count}({x.Type} x) => {returnValue},";
+                        })
+                    .AppendLine($"_ => throw new AvroRuntimeException(\"Bad choice For {choiceType}\")")
+                    .EndAllBlocks()
+                    .ToString()
+                    .Trim();
+
+                var choiceWrapper = (string what) => new IndentedStringBuilder(initialIndentationLevel: 1)
+                    .AppendLine($"{what} switch")
+                    .StartBlock("{", "}")
+                    .AppendLine("null => null,")
+                    .AppendMany(choiceTypes, (x, i) =>
+                    {
+                        var returnValue = x.Wrapper?.Invoke("x") ?? $"({x.Type})x";
+                        return $"{x.BaseType} x => new {choiceType}.Choice{i + 1}Of{choiceTypes.Count}({returnValue}),";
+                    })
+                    .AppendLine($"_ => throw new AvroRuntimeException(\"Bad choice For {choiceType}\")")
+                    .EndAllBlocks()
+                    .ToString()
+                    .Trim();
 
                 return new AvroFieldType(choiceType,
                     Schema: schema,
                     Nullable: isNullable,
-                    Unwrapper: x => $"{x}?.Unwrap()",
-                    Wrapper: x => $"{choiceType}.Wrap({x})");
+                    Unwrapper: x => choiceUnwrapper(x),
+                    Wrapper: x => choiceWrapper(x));
 
             case Schema.Type.Logical:
                 var logicalSchema = (LogicalSchema)schema;
@@ -239,15 +289,14 @@ public enum {name}
                         GetDefaultLogicalType(logicalSchema, nullable)
                 };
 
-                var lth = schema.GetProperty(options.LogicalTypes.LogicalTypeHintPropertyName)?.Trim('"');
-                if (lth is not null
-                    && options.LogicalTypes.LogicalTypes.TryGetValue(lth, out var dt))
+                var hint = schema.GetProperty(options.LogicalTypes.LogicalTypeHintPropertyName)?.Trim('"');
+                if (hint is not null && options.LogicalTypes.LogicalTypes.TryGetValue(hint, out var hintedType))
                 {
                     return typ with
                     {
-                        Type = dt,
-                        Wrapper = x => $"({dt})System.ComponentModel.TypeDescriptor.GetConverter(typeof({dt})).ConvertFrom({x})!",
-                        Unwrapper = x => $"System.ComponentModel.TypeDescriptor.GetConverter(typeof({dt})).ConvertTo({x}, typeof({typ.Type}))!",
+                        Type = hintedType,
+                        Wrapper = x => GetConvertFromClause(hintedType, x, nullable),
+                        Unwrapper = x => GetConvertToClause(typ.Type, hintedType, x, nullable)
                     };
                 }
 
@@ -255,6 +304,20 @@ public enum {name}
         }
 
         throw new CodeGenException("Unable to generate CodeTypeReference for " + schema.Name + " type " + schema.Tag);
+    }
+
+    private static string GetConvertFromClause(string type, string term, bool nullable)
+    {
+        var castType = nullable ? type + "?" : type;
+        var convert = $"({castType})System.ComponentModel.TypeDescriptor.GetConverter(typeof({type})).ConvertFrom({term})";
+        return nullable ? $"{term} is null ? null : {convert}" : convert;
+    }
+
+    private static string GetConvertToClause(string fromType, string toType, string term, bool nullable)
+    {
+        var convert =
+            $"System.ComponentModel.TypeDescriptor.GetConverter(typeof({toType})).ConvertTo({term}, typeof({fromType}))";
+        return nullable ? $"{term} is null ? null : {convert}" : convert;
     }
 
     private static AvroFieldType GetDefaultLogicalType(LogicalSchema logicalSchema, bool nullable)
@@ -282,7 +345,7 @@ public {(field.Type.Nullable || !options.GenerateRequiredFields ? "" : "required
 
         return IndentedStringBuilder
             .New(initialIndentationLevel: 1)
-            .AppendLine($"public object? Get(int fieldPos) => fieldPos switch")
+            .AppendLine($"public object Get(int fieldPos) => fieldPos switch")
             .AppendLine("{").IncreaseIndentation()
             .AppendMany(fields, x => $"{x.Field.Pos} => {unwrapper(x)},")
             .AppendLine("""_ => throw new AvroRuntimeException("Bad index " + fieldPos.ToString() + " in Get()")""")
@@ -294,14 +357,14 @@ public {(field.Type.Nullable || !options.GenerateRequiredFields ? "" : "required
     private static string BuildRecordPut(List<AvroField> fields)
     {
         var wrapper = (AvroField t) => t.Type.Wrapper is null
-            ? $"fieldValue is null ? null : ({t.Type.FullType})fieldValue"
+            ? $"({t.Type.FullType})fieldValue"
             : t.Type.Nullable
                 ? $"fieldValue is null ? null : {t.Type.Wrapper("fieldValue")}"
                 : t.Type.Wrapper("fieldValue");
 
         return IndentedStringBuilder
             .New(initialIndentationLevel: 1)
-            .AppendLine("public virtual void Put(int fieldPos, object? fieldValue)")
+            .AppendLine("public virtual void Put(int fieldPos, object fieldValue)")
             .StartBlock("{", "}")
             .AppendLine("switch (fieldPos)")
             .StartBlock("{", "}")
@@ -314,7 +377,6 @@ public {(field.Type.Nullable || !options.GenerateRequiredFields ? "" : "required
                         var wrapped = x.Type.Wrapper?.Invoke("fieldValue") ?? $"({x.Type.Type})fieldValue";
                         return $"case {x.Field.Pos}: this.{x.Name} = fieldValue is null ? null : {wrapped}; break;";
                     default:
-                        // var wrappedValue = x.Type.Wrapper?.Invoke("fieldValue") ?? $"({x.Type.FullType})fieldValue";
                         return $"case {x.Field.Pos}: this.{x.Name} = {wrapper(x)}; break;";
                 }
             })
@@ -343,7 +405,7 @@ public {(field.Type.Nullable || !options.GenerateRequiredFields ? "" : "required
 
     public static string BuildFileHeader(NamedSchema schema) =>
         $@"
-#nullable enable
+#pragma warning disable CS8669
 
 using System;
 using System.Collections.Generic;

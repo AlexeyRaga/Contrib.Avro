@@ -26,7 +26,7 @@
       }
     },
     {
-      "name": "Md5Union",
+      "name": "Md5Nullable",
       "type": ["null", "MD5"]
     }
   ]

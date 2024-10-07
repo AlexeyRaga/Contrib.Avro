@@ -49,13 +49,24 @@ internal class IndentedStringBuilder(int indentationSize = 4, int initialIndenta
     public IndentedStringBuilder AppendMany<T>(IEnumerable<T> values, Func<T, string> toLine) =>
         values.Aggregate(this, (builder, value) => builder.AppendLine(toLine(value)));
 
+    public IndentedStringBuilder AppendMany<T>(IEnumerable<T> values, Func<T, int, string> toLine) =>
+        AppendMany(values, string.Empty, string.Empty, toLine);
+
     public IndentedStringBuilder AppendMany<T>(
         IEnumerable<T> values,
         string startLineDelimiter,
         string endLineDelimiter,
-        Func<T, string> toLine)
+        Func<T, string> toLine) =>
+        AppendMany(values, startLineDelimiter, endLineDelimiter, (value, _) => toLine(value));
+
+    public IndentedStringBuilder AppendMany<T>(
+        IEnumerable<T> values,
+        string startLineDelimiter,
+        string endLineDelimiter,
+        Func<T, int, string> toLine)
     {
         var isStart = true;
+        var ix = 0;
         foreach (var value in values)
         {
             if (!isStart)
@@ -69,7 +80,9 @@ internal class IndentedStringBuilder(int indentationSize = 4, int initialIndenta
             {
                 isStart = false;
             }
-            Append(toLine(value));
+
+            Append(toLine(value, ix));
+            ix++;
         }
 
         AppendLine();
