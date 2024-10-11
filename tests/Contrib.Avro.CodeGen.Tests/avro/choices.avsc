@@ -1,0 +1,72 @@
+{
+  "type": "record",
+  "name": "MessageWithChoices",
+  "namespace": "Contrib.Avro.CodeGen.Tests",
+  "fields": [
+    {
+      "name": "Either",
+      "type": ["int", "string"]
+    },
+    {
+      "name": "EitherInArray",
+      "type": {
+        "type": "array",
+        "items": ["int", "string"]
+      }
+    },
+    {
+      "name": "EitherInMap",
+      "type": {
+        "type": "map",
+        "values": ["int", "string"]
+      }
+    },
+    {
+      "name": "EitherNullable",
+      "type": ["null", "int", "string"]
+    },
+    {
+      "name": "EitherNullableInArray",
+      "type": {
+        "type": "array",
+        "items": ["null", "int", "string"]
+      }
+    },
+    {
+      "name": "EitherNullableInMap",
+      "type": {
+        "type": "map",
+        "values": ["null", "int", "string"]
+      }
+    },
+    {
+      "name": "EitherInArrayInEither",
+        "type": ["boolean",{
+            "type": "array",
+            "items": ["int", "string"]
+        }]
+
+    },
+    {
+      "name": "EitherInMapInEither",
+        "type": ["boolean",{
+            "type": "map",
+            "values": ["int", "string"]
+        }]
+    },
+    {
+      "name": "EitherNullableInArrayInEither",
+        "type": ["boolean",{
+            "type": "array",
+            "items": ["null", "int", "string"]
+        }]
+    },
+    {
+      "name": "EitherNullableInMapInEither",
+        "type": ["boolean",{
+            "type": "map",
+            "values": ["null", "int", "string"]
+        }]
+    }
+  ]
+}

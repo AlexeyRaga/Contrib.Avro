@@ -189,17 +189,18 @@ public enum {name}
 
                 Func<string, string>? itemUnwrapper =
                     itemType.Unwrapper is not null
-                        ? x => $"{x}?.Select(x => {itemType.Unwrapper("x")}).ToList()"
+                        ? x => $"{x}?.Select(item => {itemType.Unwrapper("item")}).ToList()"
                         : null;
 
                 Func<string, string>? itemWrapper =
                     itemType.Wrapper is not null
                         ? v =>
-                            $"((IEnumerable<{itemType.FullBaseType}>){v}).Select(x => {itemType.Wrapper("x")}).ToList()"
+                            $"((IEnumerable<{itemType.FullBaseType}>){v}).Select(item => {itemType.Wrapper("item")}).ToList()"
                         : null;
 
                 return new AvroFieldType(
                     arrayType,
+                    BaseType: "IList<object>",
                     Schema: schema,
                     Unwrapper: itemUnwrapper,
                     Wrapper: itemWrapper,
@@ -211,17 +212,18 @@ public enum {name}
 
                 Func<string, string>? valueUnwrapper =
                     valueType.Unwrapper is not null
-                        ? x => $"{x}?.ToDictionary(x => x.Key, x => {valueType.Unwrapper("x.Value")})"
+                        ? x => $"{x}?.ToDictionary(k => k.Key, v => {valueType.Unwrapper("v.Value")})"
                         : null;
 
                 Func<string, string>? valueWrapper =
                     valueType.Wrapper is not null
                         ? v =>
-                            $"((IDictionary<string, {valueType.FullBaseType}>){v}).ToDictionary(x => x.Key, x => {valueType.Wrapper("x.Value")})"
+                            $"((IDictionary<string, {valueType.FullBaseType}>){v}).ToDictionary(k => k.Key, v => {valueType.Wrapper("v.Value")})"
                         : null;
 
                 return new AvroFieldType(
                     "IDictionary<string," + valueType.FullType + ">",
+                    BaseType: $"IDictionary<string, object>",
                     Schema: schema,
                     Wrapper: valueWrapper,
                     Unwrapper: valueUnwrapper,
@@ -249,7 +251,7 @@ public enum {name}
                         (x, i) =>
                         {
                             var returnValue = x.Unwrapper?.Invoke("x") ?? "x";
-                            return $"{choiceType}.Choice{i + 1}Of{choiceTypes.Count}({x.Type} x) => {returnValue},";
+                            return $"{choiceType}.Choice{i + 1}Of{choiceTypes.Count}({x.Type} x) => (object){returnValue},";
                         })
                     .AppendLine($"_ => throw new AvroRuntimeException(\"Bad choice For {choiceType}\")")
                     .EndAllBlocks()
@@ -262,8 +264,8 @@ public enum {name}
                     .AppendLine("null => null,")
                     .AppendMany(choiceTypes, (x, i) =>
                     {
-                        var returnValue = x.Wrapper?.Invoke("x") ?? $"({x.Type})x";
-                        return $"{x.BaseType} x => new {choiceType}.Choice{i + 1}Of{choiceTypes.Count}({returnValue}),";
+                        var returnValue = x.Wrapper?.Invoke("x") ?? $"x";
+                        return $"{x.BaseType} x => {choiceType}.FromValue({returnValue}),";
                     })
                     .AppendLine($"_ => throw new AvroRuntimeException(\"Bad choice For {choiceType}\")")
                     .EndAllBlocks()
@@ -271,6 +273,7 @@ public enum {name}
                     .Trim();
 
                 return new AvroFieldType(choiceType,
+                    BaseType: "object",
                     Schema: schema,
                     Nullable: isNullable,
                     Unwrapper: x => choiceUnwrapper(x),

@@ -42,7 +42,6 @@
     <ItemGroup>
         <ProjectReference Include="..\..\source\Contrib.Avro.Codegen\Contrib.Avro.Codegen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
         <ProjectReference Include="..\..\source\Contrib.Avro\Contrib.Avro.csproj" />
-        <ProjectReference Include="..\Contrib.Avro.CodeGen.Tests.LogicalTypes\Contrib.Avro.CodeGen.Tests.LogicalTypes.csproj" />
     </ItemGroup>
 
     <PropertyGroup>
