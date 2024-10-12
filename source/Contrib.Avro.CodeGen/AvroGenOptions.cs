@@ -24,7 +24,7 @@ public sealed record AvroGenOptions(
     public static AvroGenOptions Create(AnalyzerConfigOptions options)
     {
         var genRequired = options.GetMsBuildBoolean("GenerateRequiredFields", true);
-        var genRecords = options.GetMsBuildBoolean("GenerateRecords");
+        var genRecords = options.GetMsBuildBoolean("GenerateRecords", true);
         var dbgDisplayFields = options.GetMsBuildEnum("DebuggerDisplayFields", DebuggerDisplayFields.None);
 
         var namespaceMapping = options.GetMsBuildDictionary("NamespaceMapping");

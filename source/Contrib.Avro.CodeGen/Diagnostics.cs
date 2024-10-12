@@ -25,6 +25,12 @@ public static class Diagnostics
     public static void Info(this SourceProductionContext context, string message, Location? location = null) =>
         context.ReportDiagnostic(Diagnostic.Create(InfoDescriptor, location ?? Location.None, message));
 
+    public static void Info(this GeneratorExecutionContext context, string message, Location? location = null) =>
+        context.ReportDiagnostic(Diagnostic.Create(InfoDescriptor, location ?? Location.None, message));
+
     public static void Error(this SourceProductionContext context, string message, Location? location = null) =>
+        context.ReportDiagnostic(Diagnostic.Create(ErrorDescriptor, location ?? Location.None, message));
+
+    public static void Error(this GeneratorExecutionContext context, string message, Location? location = null) =>
         context.ReportDiagnostic(Diagnostic.Create(ErrorDescriptor, location ?? Location.None, message));
 }
