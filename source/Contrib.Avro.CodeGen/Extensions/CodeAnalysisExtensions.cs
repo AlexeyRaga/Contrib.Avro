@@ -10,10 +10,10 @@ public static class CodeAnalysisExtensions
         string keyValueDelimiter = ":",
         string entryDelimiter = ",")
     {
-        var defaultOpts = opts.GetValueDefault($"build_metadata.AdditionalFiles.{name}")?
+        var itemOpts = opts.GetValueOrDefault($"build_metadata.AdditionalFiles.{name}")?
             .AsDictionary(keyValueDelimiter, entryDelimiter) ?? [];
 
-        var itemOpts = opts.GetValueDefault($"build_property.Avro_{name}")?
+        var defaultOpts = opts.GetValueOrDefault($"build_property.Avro_{name}")?
             .AsDictionary(keyValueDelimiter, entryDelimiter) ?? [];
 
         foreach (var (k, v) in itemOpts) defaultOpts[k] = v;
@@ -26,7 +26,7 @@ public static class CodeAnalysisExtensions
     public static T GetMsBuildEnum<T>(this AnalyzerConfigOptions opts, string name, T defaultValue = default) where T : struct =>
         Enum.TryParse<T>(opts.GetMsBuildProperty(name), true, out var value) ? value : defaultValue;
 
-    private static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
+    public static string? GetMsBuildProperty(this AnalyzerConfigOptions opts, string name)
     {
         if ((opts.TryGetValue($"build_metadata.AdditionalFiles.{name}", out var v) && !string.IsNullOrWhiteSpace(v))
             || opts.TryGetValue($"build_property.Avro_{name}", out v) && !string.IsNullOrWhiteSpace(v))
@@ -37,7 +37,7 @@ public static class CodeAnalysisExtensions
         return null;
     }
 
-    private static string? GetValueDefault(this AnalyzerConfigOptions opts, string fullName) =>
+    private static string? GetValueOrDefault(this AnalyzerConfigOptions opts, string fullName) =>
         opts.TryGetValue(fullName, out var v) && !string.IsNullOrWhiteSpace(v) ? v : null;
 
     private static Dictionary<string, string> AsDictionary(

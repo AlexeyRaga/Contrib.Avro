@@ -1,0 +1,81 @@
+{
+  "type": "record",
+  "name": "MessageWithLogicalDecorators",
+  "namespace": "Contrib.Avro.CodeGen.Tests",
+  "fields": [
+    {
+      "name": "Id",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid",
+        "logicalTypeHint": "user-id"
+      }
+    },
+    {
+      "name": "createdBy",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "logicalType": "uuid",
+          "logicalTypeHint": "user-id"
+        }
+      ]
+    },
+    {
+      "name": "decoratedInChoice",
+      "type": [
+        "int",
+        {
+          "type": "string",
+          "logicalType": "uuid",
+          "logicalTypeHint": "user-id"
+        }
+      ]
+    },
+    {
+      "name": "decoratedInArray",
+        "type": {
+            "type": "array",
+            "items": {
+            "type": "string",
+            "logicalType": "uuid",
+            "logicalTypeHint": "user-id"
+            }
+        }
+    },
+    {
+      "name": "decoratedNullableInArray",
+      "type": {
+        "type": "array",
+        "items": ["null",{
+          "type": "string",
+          "logicalType": "uuid",
+          "logicalTypeHint": "user-id"
+        }]
+      }
+    },
+    {
+      "name": "decoratedInMap",
+      "type": {
+        "type": "map",
+        "values": {
+          "type": "string",
+          "logicalType": "uuid",
+          "logicalTypeHint": "user-id"
+        }
+      }
+    },
+    {
+      "name": "decoratedNullableInMap",
+      "type": {
+        "type": "map",
+        "values": ["null",{
+          "type": "string",
+          "logicalType": "uuid",
+          "logicalTypeHint": "user-id"
+        }]
+      }
+    }
+  ]
+}

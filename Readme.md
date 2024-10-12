@@ -14,6 +14,7 @@ functionality that works with the Apache.Avro generated code.
 - **Union Types**: Supports union types (instead of just generating `object` fields for unions as Apache.Avro does).
 - **Logical Types**: Supports custom logical types and does not fail on unknown logical types
   (can be configured to fail if required).
+- **Logical Types Hints**: Provides hints for logical types to wrap/convert them.
 - **Configuration**: Can be configured globally or per AVSC file.
 
 ## Configuration
@@ -69,15 +70,15 @@ You can also configure settings for specific AVSC files:
       ```
 
 - **`GenerateRecords`**: Determines whether to generate C# records instead of classes for Avro records.
-    - **Default**: `false`
+    - **Default**: `true`
     - **Global Configuration Example**:
       ```xml
-      <Avro_GenerateRecords>true</Avro_GenerateRecords>
+      <Avro_GenerateRecords>false</Avro_GenerateRecords>
       ```
     - **Per-File Configuration Example**:
       ```xml
       <AdditionalFiles Include="$(PkgTest_avro_contract)\schemas\**\*.avsc" 
-                       GenerateRecords="true" />
+                       GenerateRecords="false" />
       ```
 
 - **`GenerateRequiredFields`**: Marks properties for non-optional fields as `required`, making it easier to catch unset

@@ -55,7 +55,7 @@ public static class SchemaParser
             var schemaJson = JToken.Parse(text);
             SchemaUtils.ReplaceNamespace(schemaJson, options.NamespaceMapping);
 
-            FixUpLogicalTypes(schemaJson, options.LogicalTypes, options.FailUnknownLogicalTypes);
+            FixUpLogicalTypes(schemaJson, options.LogicalTypes);
 
             var schemaText = schemaJson.ToString();
 
@@ -80,12 +80,19 @@ public static class SchemaParser
         }
     }
 
-
-    private static bool LogicalTypeExists(JToken logicalType)
+    private static bool LogicalTypeExists(JToken logicalSchema, string? asLogicalType = null)
     {
+        var finalSchema = logicalSchema;
+        if (!string.IsNullOrEmpty(asLogicalType))
+        {
+            var clone = logicalSchema.DeepClone();
+            clone["logicalType"] = asLogicalType;
+            finalSchema = clone;
+        }
+
         try
         {
-            return Schema.Parse(logicalType.ToString()) is not null;
+            return Schema.Parse(finalSchema.ToString()) is not null;
         }
         catch (AvroTypeException)
         {
@@ -93,34 +100,38 @@ public static class SchemaParser
         }
     }
 
+    private static void EnsureLogicalTypeExists(
+        LogicalTypeOptions options, JObject logicalSchema, string? asLogicalType = null)
+    {
+        var typeName = asLogicalType ?? logicalSchema.Value<string>("logicalType");
+        if (typeName is null || LogicalTypeExists(logicalSchema, asLogicalType)) return;
+
+        LogicalType substitute = options.LogicalTypes.TryGetValue(typeName, out var dotnetType)
+            ? new RegisteredLogicalType(typeName, dotnetType)
+            : new UnknownLogicalType(typeName);
+
+        if (options.FailUnknownLogicalTypes && substitute is UnknownLogicalType)
+            throw new AvroTypeException(
+                $"Logical type {typeName} is not supported and is not mapped to a .NET type in the generator options.");
+
+
+        LogicalTypeFactory.Instance.Register(substitute);
+    }
+
     private static void FixUpLogicalTypes(
         JToken schema,
-        IReadOnlyDictionary<string, string> logicalTypes,
-        bool failUnknownLogicalTypes)
+        LogicalTypeOptions options)
     {
         void Traverse(JToken token)
         {
             switch (token)
             {
                 case JObject obj:
-                    obj.TryGetValue("logicalType", out var logicalTypeToken);
-                    var logicalType = logicalTypeToken?.ToString();
-                    if (!string.IsNullOrEmpty(logicalType))
+                        EnsureLogicalTypeExists(options, obj);
+
+                    if (obj.TryGetValue(options.LogicalTypeHintPropertyName, out var hintToken))
                     {
-                        if (!LogicalTypeExists(obj))
-                        {
-                            LogicalType substitute = logicalTypes.TryGetValue(logicalType, out var dotnetType)
-                                ? new RegisteredLogicalType(logicalType, dotnetType)
-                                : new UnknownLogicalType(logicalType);
-
-                            if (failUnknownLogicalTypes && substitute is UnknownLogicalType)
-                                throw new AvroTypeException(
-                                    $"Logical type {logicalType} is not supported and is not mapped to a .NET type in the generator options.");
-
-                            LogicalTypeFactory.Instance.Register(substitute);
-                        }
-
-                        break;
+                        EnsureLogicalTypeExists(options, obj, hintToken.ToString());
                     }
 
                     // Traverse fields, items, values, or types
