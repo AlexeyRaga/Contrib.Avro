@@ -27,6 +27,17 @@ public static class AvroFields
             _ => throw new CodeGenException($"Unable to generate CodeTypeReference for {schema.Name} type {schema.Tag}")
         };
 
+        var hint = schema.GetProperty(options.TypeMappingsMappings.TypeHintPropertyName)?.Trim('"');
+        if (hint is not null && options.TypeMappingsMappings.TypeMappings.TryGetValue(hint, out var hintedType))
+        {
+            return fieldType with
+            {
+                Type = hintedType,
+                Wrapper = x => GetConvertFromClause(hintedType, x, nullable),
+                Unwrapper = x => GetConvertToClause(fieldType.Type, hintedType, x, nullable)
+            };
+        }
+
         return fieldType;
     }
 
@@ -130,31 +141,13 @@ public static class AvroFields
             Nullable: nullable);
     }
 
-    private static AvroFieldType GetLogicalFieldType(AvroGenOptions options, LogicalSchema schema, bool nullable)
-    {
-        var typ = schema.LogicalType switch
+    private static AvroFieldType GetLogicalFieldType(AvroGenOptions options, LogicalSchema schema, bool nullable) =>
+        schema.LogicalType switch
         {
-            RegisteredLogicalType { DotnetTypeHint: var dotnetType } =>
-                new AvroFieldType(dotnetType, Schema: schema, nullable),
-            UnknownLogicalType _ =>
-                GetAvroType(options, schema.BaseSchema, nullable),
-            _ =>
-                GetDefaultLogicalType(schema, nullable)
+            RegisteredLogicalType { DotnetTypeHint: var dotnetType } => new AvroFieldType(dotnetType, schema, nullable),
+            UnknownLogicalType _ => GetAvroType(options, schema.BaseSchema, nullable),
+            _ => GetDefaultLogicalType(schema, nullable)
         };
-
-        var hint = schema.GetProperty(options.LogicalTypes.LogicalTypeHintPropertyName)?.Trim('"');
-        if (hint is not null && options.LogicalTypes.LogicalTypes.TryGetValue(hint, out var hintedType))
-        {
-            return typ with
-            {
-                Type = hintedType,
-                Wrapper = x => GetConvertFromClause(hintedType, x, nullable),
-                Unwrapper = x => GetConvertToClause(typ.Type, hintedType, x, nullable)
-            };
-        }
-
-        return typ;
-    }
 
     private static string GetConvertFromClause(string type, string term, bool nullable)
     {
