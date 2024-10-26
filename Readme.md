@@ -12,9 +12,9 @@ functionality that works with the Apache.Avro generated code.
   fields at compile time.
 - **Namespace Mapping**: Correctly maps namespaces.
 - **Union Types**: Supports union types (instead of just generating `object` fields for unions as Apache.Avro does).
-- **Logical Types**: Supports custom logical types and does not fail on unknown logical types
+- **Type Mappings**: Supports custom logical types, wrapper types, and an option to not fail on unknown logical types
   (can be configured to fail if required).
-- **Logical Types Hints**: Provides hints for logical types to wrap/convert them.
+- **Types Hints**: Provides hints for types to wrap/convert them.
 - **Configuration**: Can be configured globally or per AVSC file.
 
 ## Configuration
@@ -30,7 +30,7 @@ You can configure the generator using project-wide settings in your `.csproj` fi
     <Avro_GenerateRecords>true</Avro_GenerateRecords>
     <Avro_GenerateRequiredFields>true</Avro_GenerateRequiredFields>
     <Avro_DebuggerDisplayFields>required</Avro_DebuggerDisplayFields>
-    <Avro_LogicalTypes>user-id:Contrib.Avro.CodeGen.Tests.UserId</Avro_LogicalTypes>
+    <Avro_TypeMappings>user-id:Contrib.Avro.CodeGen.Tests.UserId</Avro_TypeMappings>
     <Avro_NamespaceMapping>Original.Namespace.Name:Testing.Messages</Avro_NamespaceMapping>
 </PropertyGroup>
 ```
@@ -44,7 +44,7 @@ You can also configure settings for specific AVSC files:
 <ItemGroup>
     <AdditionalFiles Include="$(PkgTest_avro_contract)\schemas\**\*.avsc"
                      NamespaceMapping="Original.Namespace.Name:New.Namespace.Name"
-                     LogicalTypes="duration:System.TimeSpan"
+                     TypeMappings="duration:System.TimeSpan"
                      DebuggerDisplayFields="required"
                      GenerateRecords="true"
                      GenerateRequiredFields="true"

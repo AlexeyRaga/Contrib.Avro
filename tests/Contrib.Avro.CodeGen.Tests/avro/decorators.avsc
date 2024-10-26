@@ -1,13 +1,12 @@
 {
   "type": "record",
-  "name": "MessageWithLogicalDecorators",
+  "name": "MessageWithDecorators",
   "namespace": "Contrib.Avro.CodeGen.Tests",
   "fields": [
     {
       "name": "Id",
       "type": {
         "type": "string",
-        "logicalType": "uuid",
         "typeHint": "user-id"
       }
     },
@@ -17,7 +16,6 @@
         "null",
         {
           "type": "string",
-          "logicalType": "uuid",
           "typeHint": "user-id"
         }
       ]
@@ -28,21 +26,19 @@
         "int",
         {
           "type": "string",
-          "logicalType": "uuid",
           "typeHint": "user-id"
         }
       ]
     },
     {
       "name": "decoratedInArray",
-        "type": {
-            "type": "array",
-            "items": {
-            "type": "string",
-            "logicalType": "uuid",
-            "typeHint": "user-id"
-            }
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "typeHint": "user-id"
         }
+      }
     },
     {
       "name": "decoratedNullableInArray",
@@ -50,7 +46,6 @@
         "type": "array",
         "items": ["null",{
           "type": "string",
-          "logicalType": "uuid",
           "typeHint": "user-id"
         }]
       }
@@ -61,7 +56,6 @@
         "type": "map",
         "values": {
           "type": "string",
-          "logicalType": "uuid",
           "typeHint": "user-id"
         }
       }
@@ -72,7 +66,6 @@
         "type": "map",
         "values": ["null",{
           "type": "string",
-          "logicalType": "uuid",
           "typeHint": "user-id"
         }]
       }

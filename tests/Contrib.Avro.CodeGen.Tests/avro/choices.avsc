@@ -4,43 +4,43 @@
   "namespace": "Contrib.Avro.CodeGen.Tests",
   "fields": [
     {
-      "name": "Either",
+      "name": "Union",
       "type": ["int", "string"]
     },
     {
-      "name": "EitherInArray",
+      "name": "UnionInArray",
       "type": {
         "type": "array",
         "items": ["int", "string"]
       }
     },
     {
-      "name": "EitherInMap",
+      "name": "UnionInMap",
       "type": {
         "type": "map",
         "values": ["int", "string"]
       }
     },
     {
-      "name": "EitherNullable",
+      "name": "UnionNullable",
       "type": ["null", "int", "string"]
     },
     {
-      "name": "EitherNullableInArray",
+      "name": "UnionNullableInArray",
       "type": {
         "type": "array",
         "items": ["null", "int", "string"]
       }
     },
     {
-      "name": "EitherNullableInMap",
+      "name": "UnionNullableInMap",
       "type": {
         "type": "map",
         "values": ["null", "int", "string"]
       }
     },
     {
-      "name": "EitherInArrayInEither",
+      "name": "UnionInArrayInUnion",
         "type": ["boolean",{
             "type": "array",
             "items": ["int", "string"]
@@ -48,24 +48,38 @@
 
     },
     {
-      "name": "EitherInMapInEither",
+      "name": "UnionInMapInUnion",
         "type": ["boolean",{
             "type": "map",
             "values": ["int", "string"]
         }]
     },
     {
-      "name": "EitherNullableInArrayInEither",
+      "name": "UnionNullableInArrayInUnion",
         "type": ["boolean",{
             "type": "array",
             "items": ["null", "int", "string"]
         }]
     },
     {
-      "name": "EitherNullableInMapInEither",
+      "name": "UnionNullableInMapInUnion",
         "type": ["boolean",{
             "type": "map",
             "values": ["null", "int", "string"]
+        }]
+    },
+    {
+      "name": "NullableArray",
+        "type": ["null", {
+            "type": "array",
+            "items": "int"
+        }]
+    },
+    {
+      "name": "NullableMap",
+        "type": ["null", {
+            "type": "map",
+            "values": "int"
         }]
     }
   ]

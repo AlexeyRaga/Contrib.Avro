@@ -49,15 +49,15 @@
         <Avro_GenerateRecords>true</Avro_GenerateRecords>
         <Avro_GenerateRequiredFields>true</Avro_GenerateRequiredFields>
         <Avro_DebuggerDisplayFields>required</Avro_DebuggerDisplayFields>
-        <Avro_LogicalTypes>user-id:Contrib.Avro.CodeGen.Tests.UserId</Avro_LogicalTypes>
+        <Avro_TypeMappings>user-id:Contrib.Avro.CodeGen.Tests.UserId</Avro_TypeMappings>
         <Avro_NamespaceMapping>Contrib.Avro.CodeGen.Tests.Messages:Testing.Messages</Avro_NamespaceMapping>
     </PropertyGroup>
 
     <ItemGroup>
         <AdditionalFiles Include="$(PkgTest_avro_contract)\schemas\**\*.avsc"
                          NamespaceMapping="Contrib.Avro.CodeGen.Tests.Messages:Contrib.Avro.CodeGen.TestMessages"
-                         LogicalTypes="duration:System.TimeSpan" />
-        <AdditionalFiles Include="avro/*.avsc" LogicalTypeHintName="logicalTypeHint" />
+                         TypeMappings="duration:System.TimeSpan" />
+        <AdditionalFiles Include="avro/*.avsc" TypeHintName="typeHint" />
     </ItemGroup>
 
 </Project>

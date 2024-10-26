@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "MessageWithPrimitives",
+  "namespace": "Contrib.Avro.CodeGen.Tests",
+  "fields": [
+    {
+      "name": "Boolean",
+      "type": {
+        "type": "boolean",
+        "foo": "bar"
+      }
+    }
+  ]
+}
