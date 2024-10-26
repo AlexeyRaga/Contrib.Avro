@@ -8,18 +8,13 @@ using Range = Hedgehog.Linq.Range;
 namespace Contrib.Avro.CodeGen.Tests;
 
 [Properties(AutoGenConfig = typeof(Generators))]
-public sealed class LogicalDecoratorsTests
+public sealed class DecoratorsTests
 {
-    static LogicalDecoratorsTests()
-    {
-        global::Avro.Util.LogicalTypeFactory.Instance.Register(new UserIdLogicalType());
-    }
-
     [Property]
-    public void Should_roundtrip_avro_message(MessageWithLogicalDecorators msg)
+    public void Should_roundtrip_avro_message(MessageWithDecorators msg)
     {
         var bytes = msg.SerializeToBinary();
-        var deserialized = AvroUtils.DeserializeFromBinary<MessageWithLogicalDecorators>(bytes);
+        var deserialized = AvroUtils.DeserializeFromBinary<MessageWithDecorators>(bytes);
         deserialized.Should().BeEquivalentTo(msg);
     }
 }
@@ -34,7 +29,7 @@ file static class Generators
             .Array(range)
             .Select(xs => xs.Select((x, i) => (x, i)).ToDictionary(x => x.i.ToString(), x => x.x));
 
-    private static Gen<MessageWithLogicalDecorators> MessageWithLogicalDecorators =>
+    private static Gen<MessageWithDecorators> MessageWithLogicalDecorators =>
         from id in UserId
         from cid in UserId.NullValue()
         from arr in UserId.Array(Range.Constant(0, 5))
@@ -46,7 +41,7 @@ file static class Generators
             Gen.Int32(Range.LinearBoundedInt32()).Select(Choice<int, UserId>.FromValue),
             UserId.Select(Choice<int, UserId>.FromValue)
         })
-        select new MessageWithLogicalDecorators
+        select new MessageWithDecorators
         {
             Id = id,
             createdBy = cid,

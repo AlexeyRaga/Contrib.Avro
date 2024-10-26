@@ -1,0 +1,74 @@
+{
+  "type": "record",
+  "name": "MessageWithDecorators",
+  "namespace": "Contrib.Avro.CodeGen.Tests",
+  "fields": [
+    {
+      "name": "Id",
+      "type": {
+        "type": "string",
+        "typeHint": "user-id"
+      }
+    },
+    {
+      "name": "createdBy",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "typeHint": "user-id"
+        }
+      ]
+    },
+    {
+      "name": "decoratedInChoice",
+      "type": [
+        "int",
+        {
+          "type": "string",
+          "typeHint": "user-id"
+        }
+      ]
+    },
+    {
+      "name": "decoratedInArray",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "typeHint": "user-id"
+        }
+      }
+    },
+    {
+      "name": "decoratedNullableInArray",
+      "type": {
+        "type": "array",
+        "items": ["null",{
+          "type": "string",
+          "typeHint": "user-id"
+        }]
+      }
+    },
+    {
+      "name": "decoratedInMap",
+      "type": {
+        "type": "map",
+        "values": {
+          "type": "string",
+          "typeHint": "user-id"
+        }
+      }
+    },
+    {
+      "name": "decoratedNullableInMap",
+      "type": {
+        "type": "map",
+        "values": ["null",{
+          "type": "string",
+          "typeHint": "user-id"
+        }]
+      }
+    }
+  ]
+}
