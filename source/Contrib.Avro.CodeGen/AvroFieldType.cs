@@ -1,9 +1,8 @@
-using System;
 using Avro;
 
 namespace Contrib.Avro.Codegen;
 
-internal sealed record AvroFieldType(
+public sealed record AvroFieldType(
     string Type,
     string BaseType,
     Schema Schema,
