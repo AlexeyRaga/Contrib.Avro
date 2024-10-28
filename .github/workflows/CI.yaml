@@ -50,10 +50,10 @@ jobs:
         tree -f
         echo $PWD
         echo ls source
-        ls source
+        ls -al source
         echo
-        echo ls source/Contrib.Avro.Codegen/
-        ls source/Contrib.Avro.Codegen/
+        echo ls source/Contrib.Avro.Codegen
+        ls -al source/Contrib.Avro.Codegen
         dotnet restore
 
     - name: Build
