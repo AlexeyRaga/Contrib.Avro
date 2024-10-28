@@ -45,11 +45,11 @@ public sealed record AvroGenOptionsConfig(
 
     public AvroGenOptions ToOptions() =>
         new(
-            NamespaceMapping.DefaultIfEmpty(new Dictionary<string, string>()).ToImmutableDictionary(),
+            NamespaceMapping.DefaultIfEmpty(new Dictionary<string, string>()),
             GenerateRequiredFields.DefaultIfEmpty(true),
             GenerateRecords.DefaultIfEmpty(true),
             new AvroTypeOptions(
-                TypeMappings.DefaultIfEmpty(new Dictionary<string, string>()).ToImmutableDictionary(),
+                TypeMappings.DefaultIfEmpty(new Dictionary<string, string>()),
                 TypeHintPropertyName.DefaultIfEmpty("typeHint"),
                 FailUnknownLogicalTypes.DefaultIfEmpty(false)),
             DebuggerDisplayFields.DefaultIfEmpty(Contrib.Avro.Codegen.DebuggerDisplayFields.None));
@@ -69,12 +69,12 @@ public sealed record AvroGenOptionsConfig(
 }
 
 public sealed record AvroTypeOptions(
-    ImmutableDictionary<string, string> TypeMappings,
+    Dictionary<string, string> TypeMappings,
     string TypeHintPropertyName,
     bool FailUnknownLogicalTypes);
 
 public sealed record AvroGenOptions(
-    ImmutableDictionary<string, string> NamespaceMapping,
+    Dictionary<string, string> NamespaceMapping,
     bool GenerateRequiredFields,
     bool GenerateRecords,
     AvroTypeOptions TypeOptions,

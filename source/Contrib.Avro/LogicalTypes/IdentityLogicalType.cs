@@ -19,7 +19,7 @@ public sealed class IdentityLogicalType<TCsharpType>(string name) : LogicalType(
 
     public override void ValidateSchema(LogicalSchema schema)
     {
-        if (schema.LogicalTypeName != name)
+        if (schema.LogicalTypeName != Name)
             throw new AvroTypeException("Wrong logical type name");
     }
 }

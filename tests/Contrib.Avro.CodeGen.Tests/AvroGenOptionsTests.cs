@@ -19,20 +19,25 @@ public sealed class AvroGenOptionsTests
         serialised.Should().NotContain("HasValue");
 
         var deserialised = AvroGenOptionsConfig.FromJson(serialised);
-        deserialised.Should().BeEquivalentTo(config);
+
+        deserialised.ToOptions().Should().BeEquivalentTo(config.ToOptions());
     }
 
     [Property]
     public void Combine_should_work(AvroGenOptionsConfig a, AvroGenOptionsConfig b, AvroGenOptionsConfig c)
     {
-        a.Combine(b).Combine(c).Should().BeEquivalentTo(a.Combine(b.Combine(c)));
+        var xs = a.Combine(b).Combine(c);
+        var ys = a.Combine(b.Combine(c));
+
+        xs.ToOptions().Should().BeEquivalentTo(ys.ToOptions());
     }
 
     [Property]
     public void Combine_with_default_should_not_change_result(AvroGenOptionsConfig a)
     {
-        a.Combine(AvroGenOptionsConfig.Default).Should().BeEquivalentTo(a);
-        AvroGenOptionsConfig.Default.Combine(a).Should().BeEquivalentTo(a);
+        var expected = a.ToOptions();
+        a.Combine(AvroGenOptionsConfig.Default).ToOptions().Should().BeEquivalentTo(expected);
+        AvroGenOptionsConfig.Default.Combine(a).ToOptions().Should().BeEquivalentTo(expected);
     }
 }
 
