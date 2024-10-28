@@ -47,7 +47,8 @@ jobs:
 
     - name: Restore dependencies
       run: |
-        tree
+        tree -f
+        echo $PWD
         ls /home/runner/work/Contrib.Avro/Contrib.Avro/source/Contrib.Avro.Codegen/Contrib.Avro.Codegen.csproj
         dotnet restore
 
