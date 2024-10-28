@@ -48,6 +48,7 @@ jobs:
     - name: Restore dependencies
       run: |
         tree
+        ls /home/runner/work/Contrib.Avro/Contrib.Avro/source/Contrib.Avro.Codegen/Contrib.Avro.Codegen.csproj
         dotnet restore
 
     - name: Build
