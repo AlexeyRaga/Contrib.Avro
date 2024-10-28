@@ -50,7 +50,7 @@ jobs:
         tree -f
         echo $PWD
         echo ls source
-        ls -al source
+        ls -alR source
         echo
         echo ls source/Contrib.Avro.Codegen
         ls -al source/Contrib.Avro.Codegen
