@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contrib.Avro.Codegen", "source\Contrib.Avro.CodeGen\Contrib.Avro.CodeGen.csproj", "{8A0F7B1D-706A-45BA-B220-DD2E6441D3CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contrib.Avro.CodeGen", "source\Contrib.Avro.CodeGen\Contrib.Avro.CodeGen.csproj", "{8A0F7B1D-706A-45BA-B220-DD2E6441D3CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contrib.Avro.CodeGen.Tests", "tests\Contrib.Avro.CodeGen.Tests\Contrib.Avro.CodeGen.Tests.csproj", "{CD11B2F3-E338-4B97-AA24-FA8B89474DDB}"
 EndProject

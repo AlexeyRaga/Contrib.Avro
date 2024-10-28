@@ -10,8 +10,6 @@
         <RootNamespace>Contrib.Avro.CodeGen.Tests</RootNamespace>
     </PropertyGroup>
 
-    <Import Project="..\..\source\Contrib.Avro.Codegen\buildTransitive\AvroGenProps.props" />
-
     <ItemGroup>
         <PackageReference Include="coverlet.collector" Version="6.0.2">
           <PrivateAssets>all</PrivateAssets>
@@ -40,7 +38,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\source\Contrib.Avro.Codegen\Contrib.Avro.CodeGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+        <ProjectReference Include="..\..\source\Contrib.Avro.CodeGen\Contrib.Avro.CodeGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
         <ProjectReference Include="..\..\source\Contrib.Avro\Contrib.Avro.csproj" />
     </ItemGroup>
 
