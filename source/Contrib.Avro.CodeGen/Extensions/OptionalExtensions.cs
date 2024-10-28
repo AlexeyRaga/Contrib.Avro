@@ -1,7 +1,7 @@
 using System;
 using Microsoft.CodeAnalysis;
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 public static class OptionalExtensions
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using Avro;
 using Newtonsoft.Json.Linq;
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 public static class SchemaUtils
 {

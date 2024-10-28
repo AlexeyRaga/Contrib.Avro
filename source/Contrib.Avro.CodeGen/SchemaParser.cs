@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 public sealed record GeneratorItem<T>(AdditionalText Item, AvroGenOptions Options, T Value);
 

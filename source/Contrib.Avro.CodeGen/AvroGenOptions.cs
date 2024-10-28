@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum DebuggerDisplayFields
@@ -52,7 +52,7 @@ public sealed record AvroGenOptionsConfig(
                 TypeMappings.DefaultIfEmpty(new Dictionary<string, string>()),
                 TypeHintPropertyName.DefaultIfEmpty("typeHint"),
                 FailUnknownLogicalTypes.DefaultIfEmpty(false)),
-            DebuggerDisplayFields.DefaultIfEmpty(Contrib.Avro.Codegen.DebuggerDisplayFields.None));
+            DebuggerDisplayFields.DefaultIfEmpty(CodeGen.DebuggerDisplayFields.None));
 
     public static AvroGenOptionsConfig FromAnalyzerConfig(AnalyzerConfigOptions options) =>
         new(

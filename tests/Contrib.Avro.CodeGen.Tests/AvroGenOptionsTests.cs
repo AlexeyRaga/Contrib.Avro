@@ -1,5 +1,5 @@
 using System.Text.Json;
-using Contrib.Avro.Codegen;
+using Contrib.Avro.CodeGen;
 using FluentAssertions;
 using Hedgehog;
 using Hedgehog.Linq;

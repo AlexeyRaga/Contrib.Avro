@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 internal sealed class ActionDisposable(Action action) : IDisposable
 {

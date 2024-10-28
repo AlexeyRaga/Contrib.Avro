@@ -1,6 +1,6 @@
 using Avro;
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 public sealed record AvroFieldType(
     string Type,

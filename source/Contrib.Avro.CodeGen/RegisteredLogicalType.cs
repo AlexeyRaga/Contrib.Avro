@@ -1,7 +1,7 @@
 using Avro;
 using Avro.Util;
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 internal sealed class RegisteredLogicalType(string name, string dotnetType) : LogicalType(name)
 {

@@ -40,7 +40,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\source\Contrib.Avro.Codegen\Contrib.Avro.Codegen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+        <ProjectReference Include="..\..\source\Contrib.Avro.Codegen\Contrib.Avro.CodeGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
         <ProjectReference Include="..\..\source\Contrib.Avro\Contrib.Avro.csproj" />
     </ItemGroup>
 

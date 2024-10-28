@@ -2,7 +2,7 @@ using Avro;
 using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
 
-namespace Contrib.Avro.Codegen;
+namespace Contrib.Avro.CodeGen;
 
 [Generator]
 public sealed class AvroSourceGen : IIncrementalGenerator
