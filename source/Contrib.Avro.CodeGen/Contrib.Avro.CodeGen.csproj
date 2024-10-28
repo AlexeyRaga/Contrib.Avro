@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="buildTransitive\AvroGenProps.props" Pack="true" PackagePath="buildTransitive/" />
+        <None Include="buildTransitive\Contrib.Avro.CodeGen.props" Pack="true" PackagePath="buildTransitive/" />
     </ItemGroup>
 
     <ItemGroup>
