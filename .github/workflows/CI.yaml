@@ -46,15 +46,7 @@ jobs:
         useConfigFile: true
 
     - name: Restore dependencies
-      run: |
-        tree -f
-        echo $PWD
-        echo ls source
-        ls -alR source
-        echo
-        echo ls source/Contrib.Avro.Codegen
-        ls -al source/Contrib.Avro.Codegen
-        dotnet restore
+      run: dotnet restore
 
     - name: Build
       run: |
