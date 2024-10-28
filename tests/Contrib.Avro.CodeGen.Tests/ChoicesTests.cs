@@ -33,8 +33,8 @@ file static class Generators
         from unionNullableInMap in ChoiceIntString.WithNull().Dictionary()
         from unionInArrayInUnion in G.ChoiceGen(Gen.Bool, ChoiceIntString.IList())
         from unionNullableInArrayInUnion in G.ChoiceGen(Gen.Bool, ChoiceIntString.WithNull().IList())
-        from unionInMapInUnion in G.ChoiceGen(Gen.Bool, ChoiceIntString.Dictionary())
-        from unionNullableInMapInUnion in G.ChoiceGen(Gen.Bool, ChoiceIntString.WithNull().Dictionary())
+        from unionInMapInUnion in G.ChoiceGen(Gen.Bool, ChoiceIntString.IDictionary())
+        from unionNullableInMapInUnion in G.ChoiceGen(Gen.Bool, ChoiceIntString.WithNull().IDictionary())
         from nullableArray in G.Int32.Array(Range.Constant(1, 5)).WithNull()
         from nullableMap in G.Int32.Dictionary().WithNull()
         select new MessageWithChoices

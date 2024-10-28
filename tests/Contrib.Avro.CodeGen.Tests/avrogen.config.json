@@ -1,0 +1,10 @@
+{
+  "TypeOptions": {
+    "TypeMappings": {
+      "user-id": "Contrib.Avro.CodeGen.Tests.UserId"
+    },
+    "FailUnknownLogicalTypes": false
+  },
+  "GenerateRecords": true,
+  "DebuggerDisplayFields": "required"
+}
