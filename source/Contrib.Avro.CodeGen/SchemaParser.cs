@@ -55,7 +55,7 @@ public static class SchemaParser
             var schemaJson = JToken.Parse(text);
             SchemaUtils.ReplaceNamespace(schemaJson, options.NamespaceMapping);
 
-            FixUpLogicalTypes(schemaJson, options.TypeMappingsMappings);
+            FixUpLogicalTypes(schemaJson, options.TypeOptions);
 
             var schemaText = schemaJson.ToString();
 
@@ -101,16 +101,16 @@ public static class SchemaParser
     }
 
     private static void EnsureLogicalTypeExists(
-        TypeMappingsOptions mappingsOptions, JObject logicalSchema, string? asLogicalType = null)
+        AvroTypeOptions options, JObject logicalSchema, string? asLogicalType = null)
     {
         var typeName = asLogicalType ?? logicalSchema.Value<string>("logicalType");
         if (typeName is null || LogicalTypeExists(logicalSchema, asLogicalType)) return;
 
-        LogicalType substitute = mappingsOptions.TypeMappings.TryGetValue(typeName, out var dotnetType)
+        LogicalType substitute = options.TypeMappings.TryGetValue(typeName, out var dotnetType)
             ? new RegisteredLogicalType(typeName, dotnetType)
             : new UnknownLogicalType(typeName);
 
-        if (mappingsOptions.FailUnknownLogicalTypes && substitute is UnknownLogicalType)
+        if (options.FailUnknownLogicalTypes && substitute is UnknownLogicalType)
             throw new AvroTypeException(
                 $"Logical type {typeName} is not supported and is not mapped to a .NET type in the generator options.");
 
@@ -120,18 +120,18 @@ public static class SchemaParser
 
     private static void FixUpLogicalTypes(
         JToken schema,
-        TypeMappingsOptions mappingsOptions)
+        AvroTypeOptions options)
     {
         void Traverse(JToken token)
         {
             switch (token)
             {
                 case JObject obj:
-                        EnsureLogicalTypeExists(mappingsOptions, obj);
+                        EnsureLogicalTypeExists(options, obj);
 
-                    if (obj.TryGetValue(mappingsOptions.TypeHintPropertyName, out var hintToken))
+                    if (obj.TryGetValue(options.TypeHintPropertyName, out var hintToken))
                     {
-                        EnsureLogicalTypeExists(mappingsOptions, obj, hintToken.ToString());
+                        EnsureLogicalTypeExists(options, obj, hintToken.ToString());
                     }
 
                     // Traverse fields, items, values, or types

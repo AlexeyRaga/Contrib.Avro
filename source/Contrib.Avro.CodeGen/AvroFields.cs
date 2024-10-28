@@ -27,8 +27,8 @@ public static class AvroFields
             _ => throw new CodeGenException($"Unable to generate CodeTypeReference for {schema.Name} type {schema.Tag}")
         };
 
-        var hint = schema.GetProperty(options.TypeMappingsMappings.TypeHintPropertyName)?.Trim('"');
-        if (hint is not null && options.TypeMappingsMappings.TypeMappings.TryGetValue(hint, out var hintedType))
+        var hint = schema.GetProperty(options.TypeOptions.TypeHintPropertyName)?.Trim('"');
+        if (hint is not null && options.TypeOptions.TypeMappings.TryGetValue(hint, out var hintedType))
         {
             return fieldType with
             {

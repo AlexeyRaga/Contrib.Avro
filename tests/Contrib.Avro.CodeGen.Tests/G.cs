@@ -1,5 +1,6 @@
 using Hedgehog;
 using Hedgehog.Linq;
+using Microsoft.CodeAnalysis;
 using Gen = Hedgehog.Linq.Gen;
 using Range = Hedgehog.Linq.Range;
 
@@ -9,6 +10,12 @@ public static class G
 {
     public static Gen<int> Int32 => Gen.Int32(Range.LinearBoundedInt32());
     public static Gen<string> String => Gen.Alpha.String(Range.LinearInt32(0, 100));
+
+    public static Gen<Optional<T>> Optional<T>(this Gen<T> gen) =>
+        Gen.Choice([
+            Gen.FromValue(new Optional<T>()),
+            gen.Select(x => new Optional<T>(x)),
+        ]);
 
     public static Gen<IList<T>> IList<T>(this Gen<T> valueGen, Range<int> range) =>
         valueGen.Enumerable(range).Select(x => (IList<T>)x.ToList());
@@ -29,11 +36,11 @@ public static class G
             gen3.Select(Choice.FromValue<T1, T2, T3>)
         ]);
 
-    public static Gen<IDictionary<string, T>> Dictionary<T>(this Gen<T> valueGen) =>
+    public static Gen<IDictionary<string, T>> IDictionary<T>(this Gen<T> valueGen) =>
+        valueGen.Dictionary().Select(x => (IDictionary<string, T>)x);
+    public static Gen<Dictionary<string, T>> Dictionary<T>(this Gen<T> valueGen) =>
         valueGen
             .Enumerable(Range.Constant(0, 5))
             .Select(xs => xs.Select((x, i) => (Item: x, Index: i))
-                .ToDictionary(x => x.Index.ToString(), x => x.Item))
-                .Select(x => (IDictionary<string, T>)x);
-
+                .ToDictionary(x => x.Index.ToString(), x => x.Item));
 }

@@ -1,0 +1,21 @@
+{
+  "type": "record",
+  "name": "MessageWithLogicalTypes",
+  "namespace": "Contrib.Avro.CodeGen.Tests",
+  "fields": [
+    {
+      "name": "Id",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "DepartmentId",
+      "type": {
+        "type": "string",
+        "logicalType": "department-id"
+      }
+    }
+  ]
+}

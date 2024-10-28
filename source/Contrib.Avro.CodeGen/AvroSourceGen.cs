@@ -11,10 +11,25 @@ public sealed class AvroSourceGen : IIncrementalGenerator
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
+        var jsonConfig = context.AdditionalTextsProvider
+            .Where(x => Path.GetFileName(x.Path).Equals("avrogen.config.json", StringComparison.OrdinalIgnoreCase))
+            .Select((x, t) => x.GetText(t))
+            .Collect()
+            .Select((items, _) => items
+                .Where(t => t is not null)
+                .Select(t => AvroGenOptionsConfig.FromJson(t!.ToString()))
+                .FirstOrDefault(AvroGenOptionsConfig.Default));
+
         var schemaResults = context.AdditionalTextsProvider
             .Where(static x => Path.GetExtension(x.Path).Equals(".avsc", StringComparison.OrdinalIgnoreCase))
             .Combine(context.AnalyzerConfigOptionsProvider)
-            .Select((x, _) => (Item: x.Left, Options: AvroGenOptions.Create(x.Right.GetOptions(x.Left))))
+            .Combine(jsonConfig)
+            .Select((x, _) => (Item: x.Left.Left, Config: x.Left.Right, JsonConfigs: x.Right))
+            .Select((x, _) => (
+                Item: x.Item,
+                Options: AvroGenOptionsConfig.FromAnalyzerConfig(x.Config.GetOptions(x.Item))
+                    .Combine(x.JsonConfigs)
+                    .ToOptions()))
             .Select((x, t) => SchemaParser.ParseSchema(x.Item, x.Options, t))
             .SelectMany((x, _) => x switch
             {
@@ -55,7 +70,8 @@ public sealed class AvroSourceGen : IIncrementalGenerator
 
         var fields = schema.Fields
             .Select(x =>
-                new AvroField(x, CodeGenUtil.Instance.Mangle(x.Name), AvroFields.GetAvroType(item.Options, x.Schema, false)))
+                new AvroField(x, CodeGenUtil.Instance.Mangle(x.Name),
+                    AvroFields.GetAvroType(item.Options, x.Schema, false)))
             .ToList();
 
         ctx.AddSource($"{schema.Fullname}.g.cs", $@"
@@ -142,7 +158,6 @@ public enum {name}
     {string.Join($", \n    ", members)}
 }}");
     }
-
 
 
     private static string BuildRecordField(AvroField field, AvroGenOptions options)
