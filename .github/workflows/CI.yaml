@@ -8,8 +8,12 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: write
+      issues: write
 
     env:
       CONFIGURATION: Release
@@ -98,7 +102,7 @@ jobs:
           github.rest.git.createRef({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            ref: 'refs/tags/${{ steps.gitversion.outputs.MajorMinorPatch }}',
+            ref: 'refs/tags/${{ steps.gitversion.outputs.fullSemVer }}',
             sha: context.sha,
             force: true
           })
@@ -107,7 +111,7 @@ jobs:
       uses: ncipollo/release-action@v1
       if: (github.ref == 'refs/heads/main')
       with:
-        name: Release ${{ steps.gitversion.outputs.MajorMinorPatch }}
-        tag: ${{ steps.gitversion.outputs.MajorMinorPatch }}
+        name: Release ${{ steps.gitversion.outputs.fullSemVer }}
+        tag: ${{ steps.gitversion.outputs.fullSemVer }}
         token: ${{ secrets.GITHUB_TOKEN }}
         generateReleaseNotes: true
