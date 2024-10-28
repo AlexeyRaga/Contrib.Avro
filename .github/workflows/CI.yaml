@@ -18,11 +18,7 @@ jobs:
     env:
       CONFIGURATION: Release
 
-      # Directories
-      OUTPUT_DIR: output
-      TEMP_DIR: temp
       TEST_RESULTS_DIR: ./output/test-results
-      REPORTS_DIR: ./output/reports
       COVERAGE_REPORT_DIR: ./output/reports/coverage-report
       COVERAGE_HISTORY_DIR: ./temp/coverage-history
       REPOSITORY_NAME: ${{ github.event.repository.name }}
