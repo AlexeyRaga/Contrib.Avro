@@ -46,7 +46,9 @@ jobs:
         useConfigFile: true
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: |
+        tree
+        dotnet restore
 
     - name: Build
       run: |
