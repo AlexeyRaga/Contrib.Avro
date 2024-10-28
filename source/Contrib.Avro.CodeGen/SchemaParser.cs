@@ -53,7 +53,7 @@ public static class SchemaParser
         try
         {
             var schemaJson = JToken.Parse(text);
-            SchemaUtils.ReplaceNamespace(schemaJson, options.NamespaceMapping);
+            SchemaUtils.ReplaceNamespace(schemaJson, options.NamespaceMappings);
 
             FixUpLogicalTypes(schemaJson, options.TypeOptions);
 

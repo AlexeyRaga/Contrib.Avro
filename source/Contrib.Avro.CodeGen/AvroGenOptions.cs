@@ -15,7 +15,7 @@ public enum DebuggerDisplayFields
 }
 
 public sealed record AvroGenOptionsConfig(
-    Optional<Dictionary<string, string>> NamespaceMapping,
+    Optional<Dictionary<string, string>> NamespaceMappings,
     Optional<bool> GenerateRequiredFields,
     Optional<bool> GenerateRecords,
     Optional<DebuggerDisplayFields> DebuggerDisplayFields,
@@ -25,7 +25,7 @@ public sealed record AvroGenOptionsConfig(
 {
     public static AvroGenOptionsConfig Default =>
         new(
-            NamespaceMapping: new Dictionary<string, string>(),
+            NamespaceMappings: new Dictionary<string, string>(),
             GenerateRequiredFields: default,
             GenerateRecords: default,
             DebuggerDisplayFields: default,
@@ -35,7 +35,7 @@ public sealed record AvroGenOptionsConfig(
 
     public AvroGenOptionsConfig Combine(AvroGenOptionsConfig other) =>
         new(
-            NamespaceMapping.Merge(other.NamespaceMapping, (x, y) => x.Merge(y)),
+            NamespaceMappings.Merge(other.NamespaceMappings, (x, y) => x.Merge(y)),
             GenerateRequiredFields.Or(other.GenerateRequiredFields),
             GenerateRecords.Or(other.GenerateRecords),
             DebuggerDisplayFields.Or(other.DebuggerDisplayFields),
@@ -45,7 +45,7 @@ public sealed record AvroGenOptionsConfig(
 
     public AvroGenOptions ToOptions() =>
         new(
-            NamespaceMapping.DefaultIfEmpty(new Dictionary<string, string>()),
+            NamespaceMappings.DefaultIfEmpty(new Dictionary<string, string>()),
             GenerateRequiredFields.DefaultIfEmpty(true),
             GenerateRecords.DefaultIfEmpty(true),
             new AvroTypeOptions(
@@ -56,7 +56,7 @@ public sealed record AvroGenOptionsConfig(
 
     public static AvroGenOptionsConfig FromAnalyzerConfig(AnalyzerConfigOptions options) =>
         new(
-            NamespaceMapping: options.GetMsBuildDictionary("NamespaceMapping"),
+            NamespaceMappings: options.GetMsBuildDictionary("NamespaceMappings"),
             GenerateRecords: options.GetMsBuildBoolean("GenerateRecords"),
             GenerateRequiredFields:  options.GetMsBuildBoolean("GenerateRequiredFields"),
             DebuggerDisplayFields: options.GetMsBuildEnum<DebuggerDisplayFields>("DebuggerDisplayFields"),
@@ -74,7 +74,7 @@ public sealed record AvroTypeOptions(
     bool FailUnknownLogicalTypes);
 
 public sealed record AvroGenOptions(
-    Dictionary<string, string> NamespaceMapping,
+    Dictionary<string, string> NamespaceMappings,
     bool GenerateRequiredFields,
     bool GenerateRecords,
     AvroTypeOptions TypeOptions,
