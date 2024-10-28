@@ -2,8 +2,8 @@ namespace Contrib.Avro.Codegen;
 
 public static class CollectionExtensions
 {
-    public static IDictionary<TKey, TValue> Merge<TKey, TValue>(
-        this IDictionary<TKey, TValue> source,
+    public static Dictionary<TKey, TValue> Merge<TKey, TValue>(
+        this Dictionary<TKey, TValue> source,
         IEnumerable<KeyValuePair<TKey, TValue>> other) where TKey : notnull
     {
         var result = new Dictionary<TKey, TValue>(source);

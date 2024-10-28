@@ -38,30 +38,24 @@ public sealed class AvroGenOptionsTests
 
 file static class Generators
 {
-    private static Gen<AvroTypeOptionsConfig> AvroTypeOptionsConfigGen =>
-        from typeMappings in G.String.Dictionary()
+    private static Gen<AvroGenOptionsConfig> AvroGenOptionsConfigGen =>
+        from namespaceMapping in G.String.Dictionary()
+        from generateRequiredFields in Gen.Bool.Optional()
+        from generateRecords in Gen.Bool.Optional()
+        from debuggerDisplayFields in GenX.auto<DebuggerDisplayFields>()
+        from typeMappings in G.String.Dictionary().Optional()
         from typeHintPropertyName in GenX.auto<string>().Optional()
         from failUnknownLogicalTypes in Gen.Bool.Optional()
-        select new AvroTypeOptionsConfig(
+        select new AvroGenOptionsConfig(
+            namespaceMapping,
+            generateRequiredFields,
+            generateRecords,
+            debuggerDisplayFields,
             typeMappings,
             typeHintPropertyName,
             failUnknownLogicalTypes);
 
-    private static Gen<AvroGenOptionsConfig> AvroGenOptionsConfigGen =>
-        from namespaceMapping in G.String.Dictionary()
-        from typeOptions in AvroTypeOptionsConfigGen
-        from generateRequiredFields in Gen.Bool.Optional()
-        from generateRecords in Gen.Bool.Optional()
-        from debuggerDisplayFields in GenX.auto<DebuggerDisplayFields>()
-        select new AvroGenOptionsConfig(
-            namespaceMapping,
-            typeOptions,
-            generateRequiredFields,
-            generateRecords,
-            debuggerDisplayFields);
-
     public static AutoGenConfig Config =>
         GenX.defaults
-            .WithGenerator(AvroTypeOptionsConfigGen)
             .WithGenerator(AvroGenOptionsConfigGen);
 }

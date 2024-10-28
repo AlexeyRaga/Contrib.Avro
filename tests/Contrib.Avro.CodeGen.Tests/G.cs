@@ -38,6 +38,7 @@ public static class G
 
     public static Gen<IDictionary<string, T>> IDictionary<T>(this Gen<T> valueGen) =>
         valueGen.Dictionary().Select(x => (IDictionary<string, T>)x);
+
     public static Gen<Dictionary<string, T>> Dictionary<T>(this Gen<T> valueGen) =>
         valueGen
             .Enumerable(Range.Constant(0, 5))
