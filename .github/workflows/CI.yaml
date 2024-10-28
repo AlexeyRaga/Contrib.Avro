@@ -49,7 +49,7 @@ jobs:
       run: |
         tree -f
         echo $PWD
-        ls /home/runner/work/Contrib.Avro/Contrib.Avro/source/Contrib.Avro.Codegen/Contrib.Avro.Codegen.csproj
+        ls /home/runner/work/Contrib.Avro/Contrib.Avro/source/Contrib.Avro.Codegen/
         dotnet restore
 
     - name: Build
