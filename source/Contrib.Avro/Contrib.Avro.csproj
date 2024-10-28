@@ -5,6 +5,9 @@
         <LangVersion>12</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Authors>Alexey Raga</Authors>
+        <Copyright>Alexey Raga</Copyright>
+        <RepositoryUrl>https://github.com/AlexeyRaga/Contrib.Avro</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>

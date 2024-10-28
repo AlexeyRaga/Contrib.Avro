@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
         <IsRoslynComponent>true</IsRoslynComponent>
-        <PackageReadmeFile>../README.md</PackageReadmeFile>
+        <PackageReadmeFile>../../Readme.md</PackageReadmeFile>
         <Authors>Alexey Raga</Authors>
         <Copyright>Alexey Raga</Copyright>
         <RepositoryUrl>https://github.com/AlexeyRaga/Contrib.Avro</RepositoryUrl>
@@ -29,7 +29,7 @@
     <ItemGroup>
         <AdditionalFiles Include="Properties\AnalyzerReleases.Shipped.md" />
         <AdditionalFiles Include="Properties\AnalyzerReleases.Unshipped.md" />
-        <None Include="..\README.md" Pack="true" PackagePath="" />
+        <None Include="..\..\Readme.md" Pack="true" PackagePath="" />
     </ItemGroup>
 
     <ItemGroup>
