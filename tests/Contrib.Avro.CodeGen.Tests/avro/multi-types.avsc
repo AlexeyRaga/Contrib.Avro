@@ -1,0 +1,36 @@
+[
+  {
+    "type": "record",
+    "name": "Address",
+    "namespace": "Contrib.Avro.CodeGen.Tests",
+    "fields": [
+      {
+        "name": "Country",
+        "type": "string"
+      },
+      {
+        "name": "City",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "SetAddress",
+    "namespace": "Contrib.Avro.CodeGen.Tests",
+    "fields": [
+      {
+        "name": "UserId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid",
+          "typeHint": "user-id"
+        }
+      },
+      {
+        "name": "Address",
+        "type": "Contrib.Avro.CodeGen.Tests.Address"
+      }
+    ]
+  }
+]
