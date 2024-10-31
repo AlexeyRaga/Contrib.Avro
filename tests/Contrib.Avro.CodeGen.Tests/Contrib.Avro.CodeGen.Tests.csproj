@@ -20,6 +20,7 @@
         <PackageReference Include="FsCheck.Xunit" Version="3.0.0-rc3" />
         <PackageReference Include="Hedgehog" Version="0.13.0" />
         <PackageReference Include="Hedgehog.Xunit" Version="0.6.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.11.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
         <PackageReference Include="Strongly" Version="1.5.1" />
         <PackageReference Include="xunit" Version="2.9.0" />

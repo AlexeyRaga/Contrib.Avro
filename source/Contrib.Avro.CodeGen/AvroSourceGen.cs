@@ -74,6 +74,7 @@ public sealed class AvroSourceGen : IIncrementalGenerator
                     AvroFields.GetAvroType(item.Options, x.Schema, false)))
             .ToList();
 
+        ctx.Info($"Generating record {schema.Fullname}.g.cs");
         ctx.AddSource($"{schema.Fullname}.g.cs", $@"
 {BuildFileHeader(schema)}
 
@@ -103,6 +104,7 @@ public partial {classOrRecord} {name}() : global::Avro.Specific.ISpecificRecord,
     {
         var name = CodeGenUtil.Instance.Mangle(schema.Name);
 
+        ctx.Info($"Generating fixed type {schema.Fullname}.g.cs");
         ctx.AddSource($"{schema.Fullname}.g.cs", $@"
 {BuildFileHeader(schema)}
 
@@ -147,6 +149,7 @@ public partial class {name} : global::Avro.Specific.SpecificFixed, global::Contr
 
         var members = schema.Symbols.Select((x, i) => $"{x} = {i}");
 
+        ctx.Info($"Generating enum {schema.Fullname}.g.cs");
         ctx.AddSource($"{schema.Fullname}.g.cs", $@"
 using System;
 

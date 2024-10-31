@@ -17,7 +17,7 @@
 
     <ItemGroup>
         <PackageReference Include="Apache.Avro" Version="1.12.0" GeneratePathProperty="true" PrivateAssets="all" />
-        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.11.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.11.0" PrivateAssets="all" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" GeneratePathProperty="true" PrivateAssets="all"/>
         <PackageReference Include="System.CodeDom" Version="8.0.0" GeneratePathProperty="true" PrivateAssets="all"/>
         <PackageReference Include="IsExternalInit" Version="1.0.3" PrivateAssets="all"/>
