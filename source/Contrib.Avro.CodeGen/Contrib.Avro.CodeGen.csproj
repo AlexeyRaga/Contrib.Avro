@@ -16,7 +16,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Apache.Avro" Version="1.12.0" GeneratePathProperty="true" PrivateAssets="all" />
+        <PackageReference Include="Apache.Avro" Version="1.12.0" GeneratePathProperty="true" />
         <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.11.0" PrivateAssets="all" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" GeneratePathProperty="true" PrivateAssets="all"/>
         <PackageReference Include="System.CodeDom" Version="8.0.0" GeneratePathProperty="true" PrivateAssets="all"/>
@@ -27,6 +27,15 @@
     <ItemGroup>
         <None Include="buildTransitive\Contrib.Avro.CodeGen.props" Pack="true" PackagePath="buildTransitive/" />
         <None Include="$(OutputPath)\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+        <None Include="$(PkgApache_Avro)\lib\netstandard2.1\*.dll"
+              Pack="true"
+              PackagePath="analyzers/dotnet/cs"
+              Visible="false" />
+
+        <None Include="$(PkgNewtonsoft_Json)\lib\netstandard2.0\*.dll"
+              Pack="true"
+              PackagePath="analyzers/dotnet/cs"
+              Visible="false" />
     </ItemGroup>
 
     <ItemGroup>
